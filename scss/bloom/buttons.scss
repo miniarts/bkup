@@ -1,0 +1,128 @@
+/* BUTTONS */
+// cancel button needs to have different style
+
+.btn,
+%btn-styles{
+	margin-top:  $btn-block-spacing-y;
+	margin-bottom:  $btn-block-spacing-y;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 1px;
+	font-size: $font-size-sm;
+}
+
+input[type="submit"][value^="Cancel"],
+button[class*="cancel"],
+button[class*="delete"],
+button[title="Cancel"]{
+	background:$btn-secondary-color;
+	color:$brand-secondary;
+}
+
+.fitem.disabled .fp-btn-choose{
+	background-color:$gray-lighter;
+	border-color: $gray-lighter;
+}
+
+.atto_image_urlentrysubmit, //button
+.usp-finish input[type="submit"],
+.usp-search-btn,
+#addcontrols input[type="submit"],
+#removecontrols input[type="submit"]{
+	@extend .btn;
+	@extend %btn-styles;
+	@include theme-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+
+.info_panel_course_submission{
+	padding:0;
+}
+
+// Styling of breadcrumb buttons
+.breadcrumb-button{
+	margin-top: 0;	
+	margin-left: .5rem;
+	float:right;
+
+	.singlebutton{
+		margin-left: 0;		
+		@include media-breakpoint-up(sm) {
+			+ .singlebutton{
+				margin-left: .5rem;
+			}
+		}
+	}
+	>a{ //maintenance mode
+		@extend .btn;
+		@extend %btn-styles;
+		@include theme-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+		@include btn-icon($fa-var-wrench, "fontawesome");
+		@include media-breakpoint-up(sm) {
+			float: left;
+			+ .singlebutton{
+				margin-left: .5rem;
+			}
+		}
+	}
+	input[type="submit"]{
+		@extend .btn;
+		@extend %btn-styles;
+		@include theme-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	}
+	.forumsearch{
+		input#search,
+        button{
+           height: 39px; 
+           float: left;
+           margin: .5rem 0;
+        }        
+        input#search{
+            @include border-right-radius(0);
+        }
+        button{
+            @include border-left-radius(0);
+        }
+	}
+}
+
+body:not(.editing){
+	.breadcrumb-button{
+		.singlebutton{
+			button{				
+				@include btn-icon($undo);				
+			}
+			&:last-child{
+				button{
+					&:before{
+						content: $fa-var-pencil;
+					 	font-family: "fontawesome";	
+					}
+				}
+			}
+		}
+	}
+}
+
+body.editing{
+	.breadcrumb-button{
+		.singlebutton{
+			button{				
+				@include btn-icon($undo);				
+			}
+			&:last-child{
+				button{
+					&:before{
+						content: $lock;
+					}
+				}
+			}
+		}
+	}
+}
+
+body#page-group-index{
+	input[name="act_showgroupsettingsform"]{
+		@extend .btn-secondary;
+	}
+}

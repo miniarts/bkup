@@ -1,0 +1,16 @@
+.path-mod-coursework{
+	a.add-general_feedback-btn,
+	a.edit-btn,
+	a.new_submission,
+	a.new_deadline_extension{
+	    @extend .btn;
+	    @extend %btn-styles;
+	    @include theme-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	    color: $btn-secondary-color !important;
+	    padding-left: 2rem;
+	    text-shadow: none;
+	}
+	table{
+	    border-top: 5px solid $brand-secondary;
+	}
+}

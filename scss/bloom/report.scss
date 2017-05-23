@@ -1,0 +1,25 @@
+.path-grade-report-grader #region-main{
+  width: 100%;
+}
+
+.path-grade-report{
+ 	.gradeparent table{
+		border-top: 5px solid $brand-secondary;
+		tr:first-of-type{
+			th{
+				background-color: $blocks-gray;
+			}
+		}
+		tr:nth-of-type(even) .cell{
+			background-color: $table-bg-accent;
+		}
+		td, th{
+			&.cell{
+				padding: $table-cell-padding;
+			}		
+		}
+		th.header{		
+			background-color: $blocks-gray;
+		}
+	}
+}

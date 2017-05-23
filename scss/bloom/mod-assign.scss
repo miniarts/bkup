@@ -1,0 +1,1290 @@
+/* mod/assign */
+/* excluded default css and added here to edit */ 
+/* because I don't want extra plugin css */
+
+/* stylelint-disable max-line-length */
+/* FIXME: MDL-55370: remove this stylelint disable */
+
+.path-mod-assign{
+   // padding:0;
+    #page-content #region-main-box{
+        margin-top:0;
+    }
+    div.gradingnavigation div {
+        float: left;
+        margin-left: 2em;
+    }
+    div.submissionstatustable,
+    div.submissionfull,
+    div.submissionlinks,
+    div.usersummary,
+    div.feedback,
+    div.gradingsummary {
+        margin-bottom: 5em;
+    }
+    div.submissionstatus .generaltable,
+    div.submissionlinks .generaltable,
+    div.feedback .generaltable,
+    div.submissionsummarytable .generaltable,
+    div.attempthistory table,
+    div.gradingsummary .generaltable {
+        width: 100%;
+    }
+    table.generaltable table td {
+        border: 0 none;
+    }
+    .gradingsummarytable,
+    .feedbacktable,
+    .lockedsubmission,
+    .submissionsummarytable {
+        margin-top: 1em;
+    }
+    div.submissionsummarytable table tbody tr td.c0 {
+        width: 30%;
+    }
+    .submittedlate {
+        color: red;
+        font-weight: 900;
+    }
+    .quickgradingform .mform fieldset,
+    .gradingbatchoperationsform .mform fieldset {
+        margin: 0;
+        padding: 0;
+    }
+    td.submissionstatus,
+    div.submissionstatus,
+    a:link.submissionstatus,
+    td.submissionstatusdraft,
+    div.submissionstatusdraft,
+    a:link.submissionstatusdraft,
+    td.submissionlocked,
+    div.submissionlocked {
+        //color: black;
+        background-color: #efefcf;
+    }
+    td.submissionstatussubmitted,
+    div.submissionstatussubmitted,
+    a:link.submissionstatussubmitted,
+    td.earlysubmission,
+    div.earlysubmission,
+    td.submissiongraded,
+    div.submissiongraded {
+        //color: black;
+        background-color: #cfefcf;
+    }   
+    td.submissionreopened,
+    div.submissionreopened,
+    td.submissionnotgraded,
+    div.submissionnotgraded {
+        //color: black;
+        background-color: #efefef;
+    }
+    td.latesubmission,
+    a:link.latesubmission,
+    div.latesubmission {
+        //color: black;
+        background-color: #efcfcf;
+    }   
+    &.jsenabled .gradingtable .c0 {
+        display: table-cell;
+    }
+    &.jsenabled .gradingbatchoperationsform {
+        display: block;
+    }
+    .gradingtable tr.selectedrow td {
+        background-color: #fec;
+    }
+    .gradingtable tr.unselectedrow td {
+        background-color: white;
+    }
+    .gradingtable .c0 div.selectall {
+        margin-left: 7px;
+    }
+    .gradingtable .yui3-menu ul {
+        margin: 0;
+    }
+    .gradingtable .yui3-menu-label {
+        padding-left: 0;
+        line-height: 12px;
+    }
+    .gradingtable .yui3-menu-label img {
+        padding: 0 3px;
+    }
+    .gradingtable .yui3-menu li {
+        list-style-type: none;
+    }
+    .gradingtable .yui3-menu .yui3-menu-content {
+        border: 0;
+        padding-top: 0;
+    }
+    div.gradingtable tr .quickgrademodified {
+        background-color: #fc9;
+    }
+    td.submissioneditable {
+        color: red;
+    }
+    .expandsummaryicon {
+        cursor: pointer;
+        display: none;
+    }
+    .gradingtable .menu-action img,
+    &.jsenabled .gradingoptionsform [type=submit],
+    &.jsenabled .gradingtable .c1 select,
+    .gradingtable .c0,
+    .gradingbatchoperationsform,
+    &.jsenabled .gradingtable .yui3-loading,
+    .hidefull,
+    .quickgradingform form .commentscontainer input,
+    .quickgradingform form .commentscontainer textarea {
+        display: none;
+    }
+    &.jsenabled .expandsummaryicon,
+    &.jsenabled .mod-assign-history-link h4,
+    &.jsenabled .quickgradingform form .commentscontainer input,
+    &.jsenabled .quickgradingform form .commentscontainer textarea {
+        display: inline;
+    }
+    .previousfeedbackwarning {
+        font-size: 140%;
+        font-weight: bold;
+        text-align: center;
+        color: #500;
+    }
+    .submissionhistory {
+        background-color: #b0b0b0;
+    }
+    .submissionhistory .cell.historytitle {
+        background-color: #808080;
+    }
+    .submissionhistory .cell {
+        background-color: #d0d0d0;
+    }
+    &.jsenabled .mod-assign-history-link {
+        display: block;
+        cursor: pointer;
+        margin-bottom: 7px;
+    }
+    &.jsenabled .attempthistory h4 {
+        margin-bottom: 7px;
+        text-align: left;
+    }
+    &.jsenabled.dir_rtl .attempthistory h4 {
+        text-align: right;
+    }
+    &.jsenabled .mod-assign-history-link-open {
+        padding: 0 5px 0 20px;
+        background: url([[pix:t/expanded]]) 2px center no-repeat;
+    }
+    &.jsenabled .mod-assign-history-link-closed {
+        padding: 0 5px 0 20px;
+        background: url([[pix:t/collapsed]]) 2px center no-repeat;
+    }
+
+    /*rtl:raw:
+    &.jsenabled .mod-assign-history-link-closed {
+        background-image: url([[pix:t/collapsed_rtl]]);
+    }
+    */
+
+    .submithelp {
+        padding: 1em;
+    }
+    .feedbacktitle {
+        font-weight: bold;
+    }
+    .submitconfirm,
+    .submissionlinks,
+    .submissionaction {
+        text-align: center;
+    }
+    .submissionlinks{
+        a.btn{
+            @extend .btn-secondary;
+        }
+    }
+    .submissionsummarytable .c0,
+    .mod-assign-history-panel .c0 {
+        width: 150px;
+    }
+    .gradingtable .moodle-actionmenu {
+        white-space: nowrap;
+    }
+    .gradingtable .moodle-actionmenu[data-enhanced].show .menu a {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .editsubmissionform input[name="submissionstatement"] {
+        vertical-align: top;
+    }
+    .editsubmissionform label[for="id_submissionstatement"] {
+        display: inline-block;
+    }
+    &.layout-option-nonavbar {
+        padding-top: 0;
+    }
+    [data-region="user-selector"]{
+        select {
+            margin-bottom: 0;
+        }
+        .alignment {
+            text-align: center;
+            margin-top: 7px;
+        }
+        [data-action="previous-user"],
+        [data-action="next-user"] {
+            font-size: 26px;
+        }
+        [data-action="next-user"] {
+            margin-left: -10px;
+        }
+        .alignment .form-autocomplete-downarrow {
+            top: 0;
+        }
+        .form-autocomplete-selection {
+            display: none;
+        }
+        .form-autocomplete-suggestions {
+            text-align: left;
+        }
+        .form-autocomplete-suggestions {
+            margin-left: 57px;
+        }
+    }
+    [data-region="user-filters"] {
+        font-size: small;
+        &:after{
+            font-family: fontawesome;
+            content: $fa-var-filter;
+            color:$bloom-header-text-color;
+        }
+        img{
+            display: none;
+        }
+    }
+
+    //POPUP
+    [data-region="configure-filters"] {
+        display: none;
+        text-align: left;
+        width: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        position: absolute;
+        margin-top: 28px;
+        margin-left: -140px;
+        padding: 10px 0;
+        z-index: 1;
+        &::before,
+        &::after {
+            position: absolute;
+            left: auto;
+            display: inline-block;
+            content: '';
+            border-style: solid;
+            border-color: transparent;
+            border-top: none;
+        }
+        &::before {
+            top: -7px;
+            right: 12px;
+            border-width: 7px;
+            border-bottom-color: rgba(0, 0, 0, 0.2);
+        }
+        &::after {
+            top: -6px;
+            right: 13px;
+            border-width: 6px;
+            border-bottom-color: #fff;
+        }
+        label {
+            display: block;
+            padding: 3px 20px;
+            text-align: left;
+        }
+        input[type="checkbox"] {
+            margin-bottom: 0;
+        }
+    }
+
+    [data-region="grading-navigation"] {
+        padding: 1em;
+    }
+
+    //COURSE TITLE
+    [data-region="assignment-info"] {
+        white-space: nowrap;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        a:last-of-type::after{
+            font-family: fontawesome;
+            content: $fa-var-cog;
+            color:$bloom-header-text-color;
+        }
+        img{
+            display: none;
+        }
+    }
+    [data-region="assignment-info"] small[data-region="assignment-tooltip"] {
+        margin-left: 0.5em;
+    }
+
+    // [data-region="user-info"] {
+    //     height: 60px;
+    // }
+
+    [data-region="user-info"] a {
+        text-decoration: none;
+    }
+
+    [data-region="user-info"] .img-rounded {
+        display: block;
+        float: left;
+        margin-top: -3px;
+        margin-right: 10px;
+    }
+
+    [data-region="user-info"] em {
+        display: block;
+        font-style: normal;
+    }
+
+    [data-region="user-info"] em.nowrap {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    [data-region="grading-actions-form"] label {
+        display: inline-block;
+    }
+
+    &.pagelayout-embedded {
+        overflow: hidden;
+    }
+
+    [data-region="review-panel"] {
+        position: absolute;
+        top: 6em;
+        bottom: 60px;
+        left: 0;
+        right: 30%;
+        width: auto;
+        box-sizing: border-box;
+        -webkit-transition: right 0.5s, left 0.5s;
+        -moz-transition: right 0.5s, left 0.5s;
+        transition: right 0.5s, left 0.5s;
+    }
+
+    [data-region="review-panel"].grade-panel-collapsed {
+        right: 30px;
+    }
+
+    [data-region="review-panel"] [data-region="review-panel-toggle"] {
+        display: none;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+        box-sizing: border-box;
+        border-radius: 0 0 0 4px;
+        border: 1px solid #ccc;
+        border-top: none;
+        background-color: #fff;
+        z-index: 99999;
+    }
+
+    [data-region="review-panel"] [data-region="review-panel-toggle"] .expand-icon,
+    [data-region="review-panel"] [data-region="review-panel-toggle"] .collapse-icon {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    [data-region="review-panel"] [data-region="review-panel-toggle"] .expand-icon .toggle-text,
+    [data-region="review-panel"] [data-region="review-panel-toggle"] .collapse-icon .toggle-text {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    [data-region="review-panel"] [data-region="review-panel-toggle"] img {
+        height: 100%;
+        float: right;
+    }
+
+    [data-region="review-panel"] [data-region="review-panel-toggle"] .expand-icon {
+        display: none;
+    }
+
+    [data-region="review-panel"] [data-region="review-panel-toggle"] .collapse-icon {
+        display: block;
+    }
+
+    [data-region="review-panel"] [data-region="review-panel-toggle"] .collapse-icon.full-width {
+        display: none;
+    }
+
+    [data-region="review-panel"] .pageheader {
+        border-right: 1px solid #ddd;
+    }
+
+    [data-region="review-panel"] + [data-region="grade-panel"] [data-region="grade"] {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        -webkit-transition: max-width 0.5s;
+        -moz-transition: max-width 0.5s;
+        transition: max-width 0.5s;
+    }
+
+    [data-region="review-panel"] .drawingregion {
+        left: 0;
+        right: 0;
+        border-color: #ddd;
+    }
+
+    [data-region="review-panel"].collapsed {
+        left: calc(30px - 70%);
+        right: calc(100% - 30px);
+        -webkit-transition: right 0.5s, left 0.5s;
+        -moz-transition: right 0.5s, left 0.5s;
+        transition: right 0.5s, left 0.5s;
+    
+        [data-region="review-panel-content"] {
+            visibility: hidden;
+            -webkit-transition: visibility 0 0.5s;
+            -moz-transition: visibility 0 0.5s;
+            transition: visibility 0 0.5s;
+        }
+        [data-region="review-panel-toggle"] .expand-icon {
+            display: block;
+        }
+        [data-region="review-panel-toggle"] .collapse-icon {
+            display: none;
+        }
+        + [data-region="grade-panel"] {
+            position: absolute;
+            left: 30px;
+            right: 0;
+            width: calc(100% - 30px);
+            overflow: auto;
+            -webkit-transition: width 0.5s, right 0.5s, left 0.5s;
+            -moz-transition: width 0.5s, right 0.5s, left 0.5s;
+            transition: width 0.5s, right 0.5s, left 0.5s;
+        }
+    }
+
+    [data-region="review-panel"].collapsed + [data-region="grade-panel"] [data-region="grade"],
+    [data-region="grade-panel"].fullwidth [data-region="grade"] {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    //grade panel
+    [data-region="grade-panel"] {
+        position: absolute;
+        top: 6em;
+        bottom: 60px;
+        right: 0;
+        left: 70%;
+        width: 30%;
+        overflow: auto;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+        padding: 15px;
+        padding-top: 0;
+        -webkit-transition: width 0.5s, right 0.5s, left 0.5s;
+        -moz-transition: width 0.5s, right 0.5s, left 0.5s;
+        transition: width 0.5s, right 0.5s, left 0.5s;
+    
+        &.collapsed {
+            left: calc(100% - 30px);
+            right: calc(30px - 100%);
+            visibility: hidden;
+            -webkit-transition: right 0.5s, left 0.5s, visibility 0 0.5s;
+            -moz-transition: right 0.5s, left 0.5s, visibility 0 0.5s;
+            transition: right 0.5s, left 0.5s, visibility 0 0.5s;
+        }
+        &.fullwidth {
+            left: 0;
+            width: 100%;
+            overflow: auto;
+        }
+        // h3 {
+        //     font-size: 18px;
+        //     font-weight: 500;
+        // }
+    
+
+        /***** Start submission status *****/
+
+        .fitem.has-popout{
+            padding-left:0;
+            padding-right:0;
+        }        
+        div.submissionstatustable {
+            margin-bottom: 2em;
+        }
+        .submissionsummarytable {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .submissionsummarytable table.generaltable td {
+            padding: 8px 0;
+            background-color: transparent;
+        }
+        .submissionsummarytable .generaltable tbody > tr:nth-child(2n+1) > td,
+        .submissionsummarytable .generaltable tbody tr:hover > td {
+            background-color: transparent;
+        }
+
+        div.submissionsummarytable table tbody tr td.c0 {
+            width: auto;
+        }
+
+        div.submissionsummarytable table tbody tr.lastrow td.c0,
+        div.submissionsummarytable table tbody tr.lastrow td.c1 {
+            border-bottom: 1px solid #ddd;
+        }
+
+        td.submissionnotgraded,
+        div.submissionnotgraded {
+            color: red;
+            background-color: transparent;
+        }
+    
+        /***** End submission status *****/
+
+        #id_gradeheader {
+            display: table-cell;
+            min-width: 0;
+        }
+
+        #id_gradeheader > legend {
+            visibility: hidden;
+            height: 0;
+            margin-bottom: 0;
+        }
+
+        .comment-area textarea[cols] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .mform .fitem.fitem_ftext,
+        .mform .fitem.fitem_f,
+        .mform .fitem.fitem_feditor,
+        .mform .fitem.fitem_fgrading,
+        .mform .fitem.fitem_ffilemanager {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .mform .fitem.fitem_ftext .fitemtitle,
+        .mform .fitem.fitem_f .fitemtitle,
+        .mform .fitem.fitem_feditor .fitemtitle,
+        .mform .fitem.fitem_fgrading .fitemtitle,
+        .mform .fitem.fitem_ffilemanager .fitemtitle {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .mform #fitem_id_grade.fitem {
+            padding-top: 5px;
+        }
+    }
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.fitem_ftext .felement,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.fitem_f .felement,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.fitem_feditor .felement,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.fitem_fgrading .felement,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.fitem_ffilemanager .felement {
+        padding: 6px 10px 10px;
+        box-sizing: border-box;
+    }
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fitem.fitem_ftext .fitemtitle,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fitem.fitem_f .fitemtitle,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fitem.fitem_feditor .fitemtitle,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fitem.fitem_fgrading .fitemtitle,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fitem.fitem_ffilemanager .fitemtitle {
+        border-bottom: 1px solid #ddd;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        padding: 6px 10px 3px;
+        box-sizing: border-box;
+    }
+
+    #page-content [data-region="grade-panel"] [data-region="popout-button"] img {
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-top: -2px;
+    }
+
+    #page-content [data-region="grade-panel"] .popout [data-region="popout-button"] img {
+        margin-left: -6px;
+        margin-right: -6px;
+        margin-top: 4px;
+    }
+
+    [data-region="grade-panel"] .fitem .fstaticlabel,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fitem .fitemtitle label {
+        font-weight: 500;
+    }
+
+    /***** Start grade *****/
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) #fitem_id_grade.fitem .fitemtitle {
+        display: inline-block;
+        width: auto;
+        border-bottom: none;
+        box-shadow: none;
+    }
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) #fitem_id_grade.fitem .felement {
+        width: auto;
+        float: right;
+    }
+
+    #page-content .mform:not(.unresponsive) #fitem_id_grade.fitem .felement input {
+        width: 80px;
+        margin-bottom: 0;
+    }
+
+    /***** End grade *****/
+
+    /***** Start rubric *****/
+    [data-region="grade-panel"] {
+        .gradingform_rubric {
+            padding-bottom: 0;
+            max-width: none;
+        }
+
+        .gradingform_rubric .criterion .description {
+            font-weight: 500;
+            min-width: 150px;
+        }
+
+        .gradingform_rubric .criterion .levels {
+            background-color: #fff;
+        }
+
+        .gradingform_rubric .criterion,
+        .gradingform_rubric .criterion.even {
+            background-color: transparent;
+        }
+
+        .gradingform_rubric.evaluate .criterion .levels .level:hover {
+            background-color: #dff0d8;
+        }
+
+        .gradingform_rubric .criterion .levels .level.checked {
+            background-color: #dff0d8;
+            border: none;
+            border-left: 1px solid #ddd;
+        }
+
+        .gradingform_rubric .criterion .levels .level .score {
+            color: #468847;
+            font-weight: 500;
+            font-style: normal;
+            margin-top: 20px;
+        }
+
+        .gradingform_rubric .criterion .remark textarea {
+            margin-bottom: 0;
+        }
+    }
+
+    /***** End rubric *****/
+
+    /***** Start marking guide *****/
+
+    [data-region="grade-panel"]{
+        .gradingform_guide {
+            margin-bottom: 10px;
+        }
+
+        .gradingform_guide .descriptionreadonly,
+        .gradingform_guide .remark,
+        .gradingform_guide .score {
+            display: block;
+        }
+
+        .gradingform_guide .descriptionreadonly {
+            padding-top: 10px;
+        }
+
+        .gradingform_guide .criteriondescription {
+            margin-top: 5px;
+        }
+
+        .gradingform_guide .criteriondescriptionmarkers {
+            width: auto;
+            margin-top: 5px;
+        }
+
+        .gradingform_guide .markingguideremark {
+            margin-bottom: 10px;
+        }
+
+        .gradingform_guide .remark .commentchooser {
+            float: right;
+            margin-top: 2px;
+            margin-left: 0;
+        }
+
+        .gradingform_guide .score {
+            float: left;
+            padding-bottom: 8px;
+        }
+
+        .gradingform_guide .score input,
+        .gradingform_guide .score div {
+            display: inline-block;
+        }
+
+        .gradingform_guide .criterion,
+        .gradingform_guide .criterion.even {
+            background-color: transparent;
+            border-width: 0 0 1px 0;
+            padding: 8px 0;
+        }
+
+        .showmarkerdesc,
+        .showstudentdesc {
+            background-color: #f5f5f5;
+            padding: 10px;
+        }
+
+        /***** End marking guide *****/
+
+        .fitem.fitem_ffilemanager {
+            margin-bottom: 0;
+        }
+
+    /***** Start popout dialogue *****/
+
+        .fitem.popout {
+            position: fixed;
+            left: 1%;
+            right: 1%;
+            top: 7em;
+            bottom: 10%;
+            z-index: 1000;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            padding:1rem;
+        }
+    }
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.popout .fitemtitle {
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 45px;
+    }
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.popout .fitemtitle label {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    #page-content [data-region="grade-panel"] [data-region="popout-button"] {
+        float: right;
+    }
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fitem.popout .fitemtitle [data-region="popout-button"] img {
+        margin-top: -10px;
+        margin-right: -7px;
+    }
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.popout .felement {
+        padding: 10px 15px 15px;
+        height: calc(100% - 54px);
+        overflow: auto;
+    }
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) .fcontainer .fitem.popout .felement .gradingform_rubric {
+        overflow: visible;
+    }
+
+    /***** End popout dialogue *****/
+
+    /***** Start attempt settings *****/
+
+
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) #id_attemptsettings .fitem:last-of-type .fitemtitle,
+    #page-content [data-region="grade-panel"] .mform:not(.unresponsive) #id_attemptsettings .fitem:last-of-type .felement {
+        border-bottom: 1px solid #ddd;
+    }
+
+    [data-region="grade-panel"]{
+        #id_attemptsettings > legend {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 40px;
+            border-bottom: 0;
+            margin-bottom: 10px;
+        }
+        #id_attemptsettings .fcontainer {
+            display: table;
+            width: 100%;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .mform #id_attemptsettings .fitem {
+            display: table-row;
+        }
+        #id_attemptsettings .fitem .fstaticlabel,
+        .mform:not(.unresponsive) #id_attemptsettings .fitem .fitemtitle label {
+            font-weight: 400;
+        }
+
+        .mform:not(.unresponsive) #id_attemptsettings .fitem .felement select {
+            margin-bottom: 0;
+        }
+
+        [data-region="attempt-chooser"] {
+            margin-bottom: 10px;
+            vertical-align: text-bottom;
+        }
+    }
+
+    /***** End attempt settings *****/
+
+    [data-region="grade-actions-panel"] {
+        border-top: 1px solid #ddd;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+    }
+
+    /*rtl:ignore*/
+    [data-region="grade-actions-panel"] [data-region="grade-actions"] .collapse-buttons {
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 15px;
+        /*margin: 0;
+        height: 100%;
+        line-height: 60px;*/
+        button{
+            &.active{
+                background-color: $gray-lighter;
+                cursor:default;
+            }
+            img{
+                margin: 0;
+            }
+        }
+    }
+
+    [data-region="grade-actions"] {
+        padding: 0;
+        text-align: center;
+    }
+
+    [data-region="submissions-list"] {
+        text-align: inherit;
+    }
+
+    [data-region="submissions-list"] label.radio input {
+        margin-top: 4px;
+        min-width: inherit;
+    }
+
+    [data-region="overlay"] {
+        display: none;
+        z-index: 100;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: auto;
+        bottom: 0;
+        background-color: #ddd;
+        opacity: 0.4;
+        padding-top: 4em;
+        text-align: center;
+    }
+
+    // TOP NAV
+    [data-region="grading-navigation-panel"]{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6em;
+        margin: 0;
+        border-bottom: 5px solid $brand-secondary;
+        background-color:$brand-primary;
+        a{
+           color:$bloom-header-text-color;
+        }
+    }
+    @include media-breakpoint-down(sm){
+    // /@media (max-width: 767px) {
+        &.pagelayout-embedded {
+            overflow: auto;
+        }
+
+        [data-region="assignment-info"] {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .page-context-header .page-header-headings {
+            margin-top: 13px;
+        }
+
+        [data-region="grade-actions-panel"] [data-region="grade-actions"] .collapse-buttons {
+            display: none;
+        }
+
+        [data-region="grading-navigation-panel"],
+        [data-region="review-panel"],
+        [data-region="grade-panel"],
+        [data-region="review-panel"].collapsed + [data-region="grade-panel"],
+        [data-region="grade-actions-panel"] {
+            position: inherit;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: auto;
+            overflow: auto;
+            height: auto;
+            margin-bottom: 1em;
+        }
+
+        [data-region="grade-panel"].collapsed {
+            visibility: visible;
+        }
+
+        [data-region="grading-navigation"] {
+            padding: 0;
+            text-align: center;
+        }
+
+        [data-region="grade-panel"] {
+            margin-bottom: 2em;
+        }
+
+        [data-region="grade-panel"] [data-region="popout-button"] {
+            display: none;
+        }
+
+        [data-region="review-panel"] {
+            position: relative;
+            max-height: 2000px;
+            -webkit-transition: max-height 0.25s linear;
+            -moz-transition: max-height 0.25s linear;
+            transition: max-height 0.25s linear;
+        }
+
+        [data-region="review-panel"] .pageheader {
+            border-right: none;
+            padding-right: 20px;
+            padding-left: 40px;
+        }
+
+        [data-region="review-panel"] [data-region="review-panel-toggle"] {
+            display: block;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: auto;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 0 0 4px 0;
+            background-color: #fff;
+            z-index: 99999;
+        }
+
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .expand-icon,
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .collapse-icon {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .ltr-icon,
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .rtl-icon {
+            height: 100%;
+        }
+
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .ltr-icon {
+            float: left;
+        }
+
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .rtl-icon {
+            float: right;
+        }
+
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .expand-icon .toggle-text,
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .collapse-icon .toggle-text {
+            line-height: 20px;
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            -webkit-transition: visibility 0 0.25s, opacity 0 0.25s;
+            -moz-transition: visibility 0 0.25s, opacity 0 0.25s;
+            transition: visibility 0 0.25s, opacity 0 0.25s;
+        }
+
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .expand-icon .rtl-icon {
+            display: none;
+        }
+
+        [data-region="review-panel"].collapsed {
+            max-height: 20px;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            -webkit-transition: max-height 0.25s linear;
+            -moz-transition: max-height 0.25s linear;
+            transition: max-height 0.25s linear;
+        }
+
+        [data-region="review-panel"].collapsed [data-region="review-panel-toggle"] {
+            width: 100%;
+            border-radius: 0 0 0 0;
+            -webkit-transition: all 0 0.25s;
+            -moz-transition: all 0 0.25s;
+            transition: all 0 0.25s;
+        }
+
+        [data-region="review-panel"].collapsed [data-region="review-panel-toggle"] img {
+            height: 100%;
+        }
+
+        [data-region="review-panel"] [data-region="review-panel-toggle"] .collapse-icon {
+            display: block;
+        }
+
+        [data-region="review-panel"].collapsed [data-region="review-panel-toggle"] .collapse-icon {
+            display: none;
+        }
+
+        &.pagelayout-popup {
+            overflow: inherit;
+        }
+
+        [data-region="grading-navigation"] [data-region="user-info"] {
+            text-align: left;
+            width: auto;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        [data-region="user-selector"] .alignment {
+            float: none;
+            margin: 0 auto 10px;
+        }
+    }
+
+    /** Start of CSS to make forms vertical in the grading panel (taken from theme/bootstrapbase/less/moodle/forms.less). */
+    [data-region="grade-panel"]{
+        .mform .fitem .fitemtitle {
+            display: block;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            text-align: left;
+            width: 100%;
+        }
+        .mform .fitem .felement {
+            margin-left: 0;
+            width: 100%;
+            float: left;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .mform .fitem .fstatic:empty {
+            display: none;
+        }
+        .mform .fitem .fcheckbox > span,
+        .mform .fitem .fradio > span,
+        .mform .fitem .fgroup > span {
+            margin-top: 4px;
+        }
+        .mform .femptylabel .fitemtitle {
+            display: inline-block;
+            width: auto;
+            margin-right: 8px;
+        }
+        .mform .femptylabel .felement {
+            display: inline-block;
+            margin-top: 4px;
+            padding-top: 5px;
+            width: auto;
+        }
+        .mform .fitem_fcheckbox .fitemtitle,
+        .mform .fitem_fcheckbox .felement {
+            display: inline-block;
+            width: auto;
+        }
+        .mform .fitem_fcheckbox .felement {
+            padding: 6px;
+        }
+       // @include media-breakpoint-down(lg){
+            .fitem>.col-md-3, 
+            .fitem>.col-md-9 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+      //  }
+    }
+
+    /** End of CSS to make forms vertical in the grading panel (taken from theme/bootstrapbase/less/moodle/forms.less). */
+
+    /** Styles to fix base theme **/
+    #page,
+    #page-content {
+        position: inherit;
+    }
+    /** End of base fixes **/
+
+/*
+   [data-region="grade-panel"] .fitem.has-popout{
+       background-color:#fff;
+   }
+*/
+    &{
+        .submissionstatustable,
+        .gradingform{
+            padding: 2%;
+            .gradingform_rubric{
+                max-width: 100% !important;
+            }
+        }
+        
+        div[data-region="overlay"]{
+            h3 img{ //loader
+                margin: 10% auto;
+                display: block;
+            }
+        }
+        div[data-region="grade-panel"].fullwidth{
+            background-color: #fff;
+            h3{
+                margin: 20px 0 10px;
+            }
+            label{
+                font-size: $font-size-base;
+            }
+            .comment-link{
+                margin-top: 20px;
+            }
+            .comment-ctrl{
+                padding: 1%;
+                background-color: #f1f1f1;
+            }
+            .comment-list{
+                padding:0;
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 10px;
+                font-size: $font-size-base;
+            }
+            .gradingform{
+                //background: #fff;
+                //padding: 2%;
+                #fitem_id_grade{
+                    &.fitem{
+                        padding-top: 0;
+                    }
+                }
+            }
+            .comment-message{
+                .no-overflow{
+                    margin-bottom: 10px;
+                }
+            }
+            .comment-area{
+                font-size: $font-size-base;
+                textarea{
+                    height: 60px;
+                    background-color: #fff;
+                    border: 1px solid #ddd;
+                }
+            }
+            .mform .fitem{
+                margin:0;
+            }
+            div[data-region="grade"]{
+               // max-width: @screen-lg-desktop;
+                & > img{ //loader
+                    margin: 30% auto;
+                    display: block;
+                }
+            }
+        }
+        div[data-region="grading-navigation"]{
+            padding: 0;
+        }
+
+        div[data-region="assignment-info"]{
+            padding-left: 1%;
+            font-size: 14px;
+            a{
+                font-size: 14px;
+            }
+        }
+        div[data-region="user-info"]{
+            padding-top: 10px;
+            & > img{
+                display: none; //loader
+            }
+            h4{
+                line-height: 16px;
+                small{
+                    font-size: $font-size-sm;
+                }
+            }
+        }
+        div[data-region="user-selector"]{
+            a{
+                text-decoration: none;            
+            }
+        }
+        span[data-region="user-count-summary"]{
+            color:$bloom-header-text-color;
+        }
+        .form-autocomplete-suggestions{
+            margin-top:0;
+            //li:hover{
+              // /  background-color: @blue;
+           // }
+        }    
+        .currentgrade{
+            a{
+                &:after{
+                    content: ' (Grade report)';
+                    color: $link-color;
+                }
+                //color: #fff;
+            }
+        }
+        .gradingtable{
+            clear: both;
+            overflow:hidden;
+            padding: 1rem 0;
+        }
+    }
+
+}

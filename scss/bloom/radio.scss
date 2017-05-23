@@ -1,0 +1,29 @@
+%label{
+	display:block;
+	background: $gray-lighter;
+	// /color:#fff;
+	padding: 1rem;
+	cursor:pointer;
+	@include border-radius();
+	&:before{
+		font-family: fontawesome;
+		content: $fa-var-circle-o;
+		margin-right: 5px;
+	}
+	input:checked + &{
+		background: $bloom-courses-color;
+		color:#fff;
+		&:before{
+			content: $fa-var-dot-circle-o;
+		}
+	}
+}
+
+.que .answer{
+	label{
+		@extend %label;
+	}
+	input[type="radio"]{
+		display: none;
+	}	
+}

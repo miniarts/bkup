@@ -1,0 +1,83 @@
+//this needs to be combined with the mod-assign
+
+#page-mod-assign-view,
+#page-mod-assign-editsubmission,
+#page-mod-coursework-actions-submissions-new{
+  @include mod-header($bloom-assignments-color);
+  .submissionstatustable{
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    //background-color: $blocks-blue;
+    border-radius: $border-radius;
+    h3{
+      @include bloom-label(default);
+    }
+    .generaltable tbody tr, .generaltable tbody tr:nth-of-type(odd){
+      background: transparent;
+      @include transition(background-color .25s ease-out);
+      border-radius: $border-radius;
+      &:hover, &:active, &:focus{
+        background-color: darken($blocks-blue, 5%);
+      }
+    }
+    .c0{
+      font-weight: 900;
+    }
+    td.submissionnotgraded{
+      background: transparent;
+      font-weight: 900;
+      color: $brand-secondary;
+    }
+  }
+  .submissionaction{
+    button[type="submit"]{
+      @extend .btn-primary;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      &:before{
+        content: $fa-var-plus;
+        font-family: FontAwesome;
+        margin-right: 5px;
+      }
+    }
+  }
+  .editsubmissionform{
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+   // background-color: $blocks-blue;
+    //border-radius: $border-radius;
+    form{
+      .col-md-3{
+        float: none;
+        width: 100%;
+        .col-form-label[for="id_files_filemanager"]{
+          @include bloom-label(default);
+        }
+      }
+      .col-md-9{
+        float: none;
+        width: 100%;
+        .filemanager{
+          border-radius: $border-radius;
+         // border: $border-width solid darken($blocks-blue, 10%);
+          > div{
+            padding: 1.25rem 1.25rem 0 1.25rem;
+            &:last-of-type{
+              padding-bottom: 1.25rem;
+            }
+          }
+        }
+        .fp-restrictions{
+          span{
+            text-align: left;
+          }
+        }
+        .fp-navbar{
+          border: none;
+          border-bottom: $border-width solid darken($blocks-blue, 10%);
+        }
+      }
+    }
+  }
+}

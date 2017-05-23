@@ -1,0 +1,48 @@
+.path-grade-report-grader #region-main{
+  width: 100%;
+}
+
+/**
+ * Grader report.
+ */
+.path-grade-report {
+    .gradeparent {
+        overflow-x: hidden; // double scroll js can't move floating header inside the wrapper
+        table {
+            @include border-radius($border-radius);
+            border-top: 5px solid $brand-secondary;
+        }
+        tr:first-of-type{
+            th{
+                background-color: $blocks-gray;
+            }
+        }
+        tr{ 
+            .cell {
+                background-color: $table-border-color;           
+            }
+             &:not(:first-of-type){
+                &:hover .cell{
+                    background-color: $table-bg-hover;
+                }
+            }
+        }
+        td, th{
+            &.cell{
+                padding: $table-cell-padding;
+            }       
+        }
+        .cell {
+            border-color: $table-border-color;
+        }
+        tr:nth-of-type(even) .cell,
+        .floater .cell,
+        .avg {
+            background-color: $gray-lightest;
+        }
+        table .clickable {
+            cursor: pointer;
+        }
+    }
+}
+

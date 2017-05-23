@@ -1,0 +1,34 @@
+//SINGLE ACTIVITY
+
+.format-topics,
+.format-weeks{
+    .course-content{
+        > ul{
+            > li{                
+                .side{
+                  width: auto;
+                }
+                .sectionname{
+                  margin-bottom: 1.25rem;
+                  border-bottom: none;
+                }
+                ul.section{
+                  margin: 0;
+                  padding: 0;
+                }
+                &:not(#section-0){
+                  padding: 1.25rem;
+                }
+            }
+        }
+    }
+}
+
+//incourse
+.format-topics{
+  table .action-menu .dropdown-toggle{
+    @extend .btn;
+    @extend %btn-styles;
+    @include theme-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+  }
+}

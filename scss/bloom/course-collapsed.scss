@@ -1,0 +1,146 @@
+// COLLAPSED TOPIC FORMAT
+
+//.path-course
+.format-topcoll{
+  .ctopics .tcsection.main{
+    margin: 0;
+    padding: 0 1.25rem;
+    @include media-breakpoint-down(xs){
+      .content{
+        margin:0;
+      }
+    }
+    &#toggle-all{
+      .sectionbody h4{
+        text-align: center;
+        padding: 1.25rem 0;
+      }
+      .on, .off{
+        background: $brand-secondary;
+        @include border-radius($border-radius);
+        padding: 0.8rem 1.25rem;
+        color: $btn-text-color;
+        margin: 1rem;
+        @include transition(background .3s ease-out);
+        &:hover{
+          background: darken($brand-secondary, 10%);
+        }
+        &:before{
+          content: $fa-var-chevron-down;
+          font-family: FontAwesome;
+          display: inline-block;
+          font-size: $font-size-h4;
+          margin-right: 10px;
+          @include transition(all .15s ease);
+        }
+        &.off{
+          &:before{
+            content: $fa-var-chevron-up;
+          }
+        }
+        @include media-breakpoint-down(xs){
+          display: inline-block;
+          width: auto;
+          font-size: 1rem;
+          margin: 0 1px;
+        }
+      }
+    }
+    &#topcoll-display-instructions{
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+  }
+
+  .course-content{   
+    ul.ctopics{   
+      li.section.main{
+        .content{
+          margin:0;
+        }
+      }  
+      > li#section-0{
+        margin: 0;
+      }    
+      > li:not(#section-0){ 
+        margin: 0 0 1.25rem 0;
+        padding: 0;
+       //a[title="Edit section"] img,          
+        .left.side,
+        .right.side{
+          display: none;
+        }
+        .content{
+          .sectionhead{
+            .the_toggle{
+              margin:0;
+              padding: 1.25rem;
+              background: $bloom-courses-color;
+              color: $btn-text-color;
+              @include border-radius($border-radius);              
+              @include transition(background .3s ease-out);
+              &:hover{
+                background: darken($bloom-courses-color, 5%);
+              }
+              &:before{
+                content: $fa-var-chevron-down;
+                font-family: FontAwesome;
+                display: inline-block;
+                font-size: $font-size-h4;               
+                @include transition(all .15s ease);
+              }
+              .section-title{
+                display: inline-block;
+              }
+              &.toggle_open{
+                &:before{
+                  transform: rotate(-180deg);
+                }
+              }
+            }
+          }
+          .sectionbody{
+            padding: 1.25rem;
+            ul.section{
+              padding:0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.format-topcoll.editing{
+  ul.ctopics .section .activity .actions{
+    position: absolute;
+  }
+  .course-content ul.ctopics li[id^="section-"]:not(#section-0){
+    padding: 1.25rem;
+    border: $border-width solid darken($blocks-blue, 10%);
+    background: $body-bg;
+    h3{
+      color: $btn-text-color;
+    }
+    .left.side{
+      display: block;
+      width: auto;
+      .cps_centre{
+        display: none;
+      }
+      .section-handle::before{
+        margin:0;
+      }
+    }
+  }
+}
+
+//collapsted format
+#page-course-edit #id_courseformathdr .fcontainer{
+  & > .fitem {
+    &.fitem_fcolourtext,
+    &.form-group:nth-of-type(12 ~ 14){
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,188 @@
+//ELEMENTS
+// For inserting icons from bloom-icons font
+
+// bloom-icon-insert needs to be revised
+
+@mixin bloom-icon-insert( $icon, $color:$btn-text-color, $boxSize:$font-size-base, $fontSize:inherit){
+  font-family: bloom;
+  content: $icon;
+  color: $color;
+  width: $boxSize;
+  line-height: $boxSize;
+  font-size: $fontSize;
+  display: inline-block;
+  text-align: center;
+}
+
+@mixin btn-icon($icon, $font:bloom){
+  position: relative;
+  padding-left:2.5rem;
+  &:before{
+    left: 1.3rem;
+    top: .8rem;
+    position:absolute;
+    font-family: $font;
+    content: $icon;  
+    font-weight: normal;
+    text-transform: none;
+  }
+}
+
+// General style for settings dropdown menu in edit moede ("cog" icon)
+@mixin settings-dropdown(){
+  .dropdown{
+    &.open{
+      &:before{
+        border-top: 5px solid $brand-secondary;
+      }
+    }
+  }
+  .dropdown-toggle{
+    display: inline-block;
+    color: $btn-text-color;
+    font-size: 0;
+    &:hover{
+      color: $btn-text-color;
+    }
+    &:after{
+      display: none;
+    }
+    &:before{
+      content: $setting; //settings icon
+      font-family: bloom;
+      font-size: 1rem;
+      color: $brand-secondary;
+    }
+  }
+}
+
+//navigation, tab labels, block header
+@mixin bloom-label($size, $text-weight:900, $text-color:$brand-secondary){
+	font-weight: $text-weight;
+	color: $text-color;
+ 	text-transform: uppercase;
+ 	letter-spacing: 0.5px;  
+  @if $size == default{ //underline etc
+    text-align: left;
+    border-bottom: 3px solid $brand-secondary;    
+    padding: 0 1.25rem 0.4rem 0;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    font-size: $font-size-base;
+    width: auto;
+  } @else{
+    text-align: center;
+    font-size: $size;
+  }
+}
+
+// Input fields
+@mixin bloom-input-field($border-active: $bloom-accent-color, $border-color: $input-border-color){
+  border-radius: $input-border-radius;
+  padding: $input-padding-x-sm;
+  @if $border-color != "none" {
+    border: 1px solid $border-color;
+  }
+  &:active, &:focus{
+    border: 3px solid $border-active; //$border-properties-active;  
+    outline: none;
+  }
+}
+
+
+//ATTRIBUTE MIXINS
+@mixin gradient-vertical($start-color, $end-color) {
+  background: $brand-secondary; // old browsers
+  background: -webkit-linear-gradient(top, $start-color, $end-color);  // Safari 5.1-6, Chrome 10+
+  background: -o-linear-gradient(top, $start-color, $end-color);  // Opera 12
+  background: linear-gradient(to bottom, $start-color, $end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+@mixin theme-button-variant($color, $background, $border) {
+  $active-background: darken($background, 10%);
+  $active-border: darken($border, 12%);
+
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+ // @include box-shadow($btn-box-shadow);
+
+  @include hover {
+    color: $color;
+    background-color: $active-background;
+        border-color: $active-border;
+  }
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $active-background;
+        border-color: $active-border;
+  }
+
+  &:active,
+  &.active{
+    color: $color;
+    background-color: $active-background;
+        border-color: $active-border;
+    // Remove the gradient for the pressed/active state
+    background-image: none;
+   // @include box-shadow($btn-active-box-shadow);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+          border-color: darken($border, 25%);
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $border;
+    }
+    @include hover {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+}
+
+@mixin mod-header($color: $brand-secondary){
+  #page-header{
+    background-color: $blocks-gray;
+    .breadcrumb{
+      background-color: $blocks-gray;
+      margin-bottom: 0;
+    }
+  }
+  .page-context-header{
+    margin: 0 -15px;
+    padding: 0 15px 1.25rem;
+    background-color: $blocks-gray;
+    h1{
+      font-size: $font-size-lg;
+      font-weight: 900;
+    }
+  }
+  span#maincontent + h2{
+    margin: 1.25rem 0;
+  }
+  #intro{    
+    &:not(:empty){
+      border: $border-width solid darken($blocks-blue, 10%);
+      background-color: $blocks-blue;
+      color: $brand-secondary;
+      padding: 1.25rem;
+      // margin-top: 1.25rem;
+      @include border-bottom-radius($border-radius);
+    }
+    border-top: 5px solid $color !important;
+  }
+}

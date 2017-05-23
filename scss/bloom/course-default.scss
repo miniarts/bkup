@@ -1,0 +1,344 @@
+// COURSE FORMATS:
+// - WEEKLY
+// - TOPICS
+// - SINGLE activity
+// - SOCIAL
+// - COLLAPSED
+// - FLEXIBLE
+// - GRID
+
+.path-course{
+  *:target { //????
+      padding-top: 0 !important;
+      margin-top: 1.25rem !important;
+  }
+  .completionprogress {
+    margin: 10px 5px 0 0;
+  }
+  .right.side{
+    margin: 0 0 1.25rem 0;
+    padding: 0 !important;
+    @include settings-dropdown();
+    width: auto;
+  }
+  .left.side{
+    width: auto;
+    padding: 0 !important;
+    margin: 0;
+    .icon.spacer{
+      display: none;
+    }
+    .section-handle{
+      &:before{ 
+        @include bloom-icon-insert($drag, $brand-secondary, 24px, $font-size-lg);
+        margin-right: 0.5rem;
+      }
+      img{
+        display: none; 
+      }
+    }
+  }
+  .course-content{
+    .summary{
+      margin-left:0 !important;
+      @include media-breakpoint-up(md){
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+      }
+    }
+  }
+
+  //TOPICS  UL/LI
+  //COLLAPSED UL/LI
+  //WEEKLY   UL/li
+  //FLEXIBLE  UL/LI
+  //GRID  UL/LI
+  li.section{
+    background: $blocks-blue;
+    @include border-radius($border-radius);
+    .label .contentwithoutlink{
+      padding-right: 0;
+    }
+    li.activity{
+      > div{
+        padding: 0.8rem 0;
+      }
+      .filler{
+        width: 0;
+        margin:0;
+      }
+      .commands, .autocompletion{
+        vertical-align: middle;
+        display: inline-block;
+      }   
+      background: transparent;
+      @include border-radius($border-radius);
+      @include transition(background .25s ease-out);
+      &:hover, &.action-menu-shown{
+        background: darken($blocks-blue, 5%);
+      }
+    }
+  }  
+  #section-0{
+    background: $body-bg;
+    .content{
+      margin:0;
+      padding:0 !important; 
+      clear:both;
+      ul.section{ 
+        margin: 0;
+        padding: 1.25rem 0;
+      }
+    }
+  }  
+}
+
+//EDIT MODE
+.path-course.editing{
+  .course-content ul > li.section{
+    border: $border-width solid darken($blocks-blue, 10%) !important;
+    padding: 1.25rem;
+    > .controls{
+      a.settings{
+        display: inline-block;
+        background: $brand-secondary;
+        @include border-radius($border-radius);
+        &:before{
+          @include bloom-icon-insert($setting, $btn-text-color, 24px, $font-size-base);
+        }
+        img{
+          display: none;
+        }
+      }
+    }
+  }
+  .section .activity{
+    position: relative;
+    .activityinstance{
+      padding-right: 50px;
+      width: 100%;
+      a{
+        max-width: 100%;
+        display: inline-block;
+        overflow:hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .contentafterlink{
+      margin-left:0;
+    }
+  }
+  li.activity{
+    //overflow:hidden;
+     .actions{  
+      @include settings-dropdown();
+      .menubar a.menu-action.dropdown-item{
+        display: block;
+        margin-left: 0;
+      }
+    }
+  }
+  .editing_move{
+    &:before{
+      font-family: bloom;
+      content: "g";
+      color: $brand-secondary;
+    }
+    img.iconsmall{
+      display: none;
+    }
+  }
+  .quickeditlink{
+    display: inline-block;
+    margin-left: 10px;
+    &:active, &:focus{
+      outline: none;
+    }
+    .quickediticon{
+      &:before{
+        font-family: bloom;
+        content: "1";
+        color: $brand-secondary;
+        font-size: $font-size-lg;
+      }
+      img{
+        display: none;
+      }
+    }
+  }
+  .mod-indent-outer{
+    display: block;
+    padding-left: 1rem !important;
+    .activityinstance{
+      .inplaceeditable.inplaceeditable-text{
+        a{
+          img.activityicon{
+            vertical-align: top;
+            width: 32px;
+            height: 32px;
+            @include media-breakpoint-down(xs){
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+      .instancename{
+        @include media-breakpoint-up(sm){
+          font-size: $font-size-h4;
+        }        
+        font-weight: 900;
+        padding: 0 0.5rem;
+      }
+      // edit field for activity name
+      span.editinstructions{
+        background-color: $state-info-bg;
+        color: $state-info-text;
+        border: 1px solid $state-info-border;
+        width: 200px;
+      }
+    }
+  }      
+  .summary{
+    a[title*="Edit"]{
+      @extend .btn;
+      @extend %btn-styles;
+      @include theme-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+      //@extend .btn-secondary;
+      &:before{
+        content: 'Edit summary';
+      }
+      img{
+        display: none;
+      }
+    }
+  }
+  .section-modchooser-link{ // "add activity" button styling
+    a{
+      @extend .btn;
+      @extend %btn-styles;
+      @include theme-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+      //@extend .btn-primary;
+      &:active, &:focus{
+        outline: none;
+      }
+      &:before{
+        font-family: FontAwesome;
+        content: $fa-var-plus;
+        margin-right: 5px;
+        font-weight: normal;  
+      }
+      img{
+        display: none;                                                                                                                                                                                                             
+      }
+    }
+  }
+  .actions{   
+    .menubar a.menu-action{
+      margin-left: 5px;
+      &:before{
+        font-family: bloom;
+        content: "";
+        color: $brand-secondary;
+      }
+      &.editing_groupsnone{
+        &:before{
+          content: $profile;
+        }
+      }
+      &.editing_groupsseparate{
+        &:before{
+          content: $groups-separate;
+        }
+      }
+      &.editing_groupsvisible{
+        &:before{
+          content: $groups;
+        }
+      }
+      img{
+        display: none;
+      }
+    }
+  }
+}
+
+
+//COURSE SEARCH
+fieldset.coursesearchbox{
+  text-align: left;
+  label{
+    @include bloom-label($font-size-base);
+  }
+  #coursesearchbox,
+  button{
+    float: left;
+    height: 39px;
+  }
+  #coursesearchbox{
+    width: 80%;
+    @include border-right-radius(0);
+  }
+  button{
+    margin: 0;
+    width: 20%;
+    @include border-left-radius(0);
+  }
+}
+
+#page-course-search{
+  .course-search-result{
+    .coursebox.odd, .coursebox.even{
+      background-color: $blocks-blue;
+      border-radius: $border-radius;
+      padding: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .coursename{
+      &:hover, &:active, &:focus{
+        .highlight{
+          text-decoration: underline;
+          color: $link-hover-color !important;
+          &:after{
+            opacity: .2;
+          }
+        }
+      }
+      a{
+        background-image: none;
+        padding-left: 0;
+      }
+      .highlight{
+        position: relative;
+        text-decoration: $link-decoration;
+        padding: 0.3rem 0.5rem;
+        color: $body-color !important;
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: $border-radius-sm;
+          background-color: $bloom-accent-color;
+          width: 100%;
+          height: 100%;
+          opacity: .4;
+          @include transition(all .25s ease-out);
+        }
+      }
+    }
+  }
+}
+
+
+//TEMP
+//ACTIVITIES
+@include media-breakpoint-down(xs) {
+  .glossarydisplay table{
+    td:nth-child(2){
+      display: none;
+    }
+  }
+}

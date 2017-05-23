@@ -1,0 +1,193 @@
+// FILE PICKER
+
+.fp-navbar,
+.fp-viewbar,
+.filemanager{
+	&:not(.disabled) a[class*="btn-"]{ //if you write a.btn or a.btn-secondary, Moodle gets upset
+		background-color: #fff;
+		color: $brand-secondary;
+		font-weight: normal;
+		border-color:$gray-lighter;
+		&:hover,
+		&.checked{
+			background-color: $gray-lighter;
+		}
+	}
+}
+.fp-navbar{
+	padding: 0.8rem;
+	background: $blocks-blue;
+}
+.filepicker-filelist .filepicker-container,
+.filemanager.fm-noitems .fm-empty-container{
+	top: 1.25rem;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 0.6rem;
+	border: 2px dashed darken($blocks-blue, 10%);
+}
+.filemanager:not(.fm-nofiles){
+	.filemanager-container{
+		border: 1px solid $gray-lighter;
+		border-top:none;
+	}
+}
+.dndupload-arrow{
+	position: static;
+	margin: 0.6rem 0;
+}
+.file-picker{ // FILE PICKER DIALOG
+	.fp-repo-items{
+		border: 1px solid darken($blocks-blue, 10%);
+		@include border-radius($border-radius);
+		outline: none;
+	}
+	.fp-navbar{
+		border: none;
+	}
+	.fp-def-search{
+		margin-top:.5rem;
+	}
+	.fp-content-center,
+	.fp-upload-form{
+		display:initial;
+	}
+}
+.fp-content{
+	.fp-filename-field{
+		height: auto;
+		overflow: visible;
+		position: static;
+		.fp-filename{
+			padding: 0.5rem;
+			margin-bottom: 0;
+		}
+	}
+	select[name="license"]{
+		margin: 0;
+	}
+	table{
+		background-color:transparent;
+	}
+}
+.fp-pathbar{
+	margin-top: 1rem;
+	.fp-path-folder{ 
+		padding: 3px;
+	}
+	.fp-path-folder-name {
+    	margin-left: 20px;
+	}
+}
+.fp-repo-items .fp-pathbar{
+	padding: 0 0.8rem;
+	margin: 1rem 0;
+}
+.fp-formset input[type="file"]{
+	width: 100%;
+}
+
+/* FORM */
+
+///moodle core override
+.path-backup .mform .fitem .felement {
+  margin-left: 0;
+}
+#page-mod-assign-grading .quickgradingform {
+  clear:both;
+}
+.fcontainer{
+	.form-inline .form-group{
+		display: inline-block;
+	}
+	.custom-select{
+		margin: 0;
+	}
+}
+.form-label label, .col-form-label{
+	font-weight: 600;
+	color: $brand-secondary;
+}
+textarea{
+	@include border-radius($border-radius);
+}
+select{
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+@include media-breakpoint-down(xs){
+	.fdate_selector,
+	.fdate_time_selector{
+		a[id*="_calendar"]{
+			margin-top: .5rem;
+		}
+		label.form-check{
+			margin-top: .75rem;
+			display: inline-block;
+		}
+	}
+	#dateselector-calendar-panel{
+		.yui3-calendarbase{
+			width: 100% !important;
+		}
+	}
+	.form-group:not(.row){
+		margin-bottom: .5rem;
+	}
+	.form-inline .form-group:not(.row){
+		display: inline-block;
+	}
+}
+
+// Moodle dialogue
+.moodle-dialogue{
+	max-width: 96%;
+}
+.moodle-dialogue-base .moodle-dialogue-wrap{
+	&.moodle-dialogue-content{
+		background: $body-bg;
+		outline: none;
+	}
+	.moodle-dialogue-hd{ 
+		border-bottom: 1px solid darken($blocks-blue, 10%);
+	}
+}
+.moodle-dialogue-base .closebutton{
+	opacity: 0.7;
+	&:hover, &:active, &:focus{
+		opacity: 1;
+	}
+	&:after{
+		font-size: 2.5rem;
+		color: $brand-secondary;
+	}
+}
+
+.modal-in-page{
+	.modal-content{
+		#modal-header,
+		#modal-body{
+			color: $brand-secondary;
+		}		
+		border: none;
+		.modal-header{
+			border-bottom: none;
+		}
+		.modal-footer{
+			border-top: none;
+			.singlebutton{
+				&:nth-of-type(2){//cancel button
+					button[type="submit"]{
+						background:$btn-secondary-color;
+						color:$brand-secondary;
+					}
+				}
+				button[type="submit"]{
+					margin: 0;
+				}
+			}
+		}
+	}
+}

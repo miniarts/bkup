@@ -1,0 +1,43 @@
+//tables from info panel
+table{
+	.info_panel_assignment{
+		word-break: break-word;
+	}
+	&.flexible{
+	 	td,
+	 	th{
+			padding:.5rem;
+			@include media-breakpoint-down(sm){
+				font-size:.9rem;
+				.info_panel_course_submission{
+					font-size:.9rem;
+				}
+				.icon:not(.smallicon){
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+table{
+	//border-top: 5px solid $brand-secondary;
+	margin-bottom: 1.25rem;
+	th.header{
+		padding: 0.6rem 0.5rem;
+		background-color: $blocks-gray;
+		border-top: 5px solid $brand-secondary;
+	}
+	tr{
+		@include transition(background-color .25s ease-out);
+		td{
+			padding: 0.5rem;
+		}
+	}
+}
+table.roleassigntable{
+	#existingcell,
+	#potentialcell{
+		width: 35%;
+	}
+}

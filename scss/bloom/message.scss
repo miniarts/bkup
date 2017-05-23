@@ -1,0 +1,245 @@
+.messaging-area-container{
+	.messaging-area,
+	.contacts-area{
+		border:none;
+	}		
+	span[data-region="contact-icon-blocked"]{
+		&:before{
+			font-family: fontawesome;
+			content:$fa-var-ban;
+			color: $brand-danger;
+			font-size: $font-size-lg;
+		}
+		img{
+			display: none;
+		}
+	}
+	span[data-region="contact-icon-online"]{
+		&:before{
+			font-family: fontawesome;
+			content:$fa-var-circle;
+			color: $brand-success;
+			font-size: $font-size-lg;
+		}
+		img{
+			display: none;
+		}
+	}
+	.messaging-area{
+		.contacts-area{
+			border-right: 3px solid #fff;
+			.tabs{
+				border: none;
+				 .tab{
+					background-color: $blocks-gray;
+					color: $btn-secondary-bg;
+					@include border-top-radius($border-radius);
+					&.selected{
+						background-color: $btn-secondary-bg;
+						color: $btn-secondary-color;
+					}
+					.icon-messages,
+					.icon-contacts{
+					 	font-size: $font-size-lg;	
+					 	padding:1rem;	
+					 	&:before{
+					 		font-size: $font-size-h3;	
+					 	}
+					}					
+					.icon-messages{
+						@include btn-icon("c", bloom);
+					}			
+					.icon-contacts{
+						@include btn-icon($groups, bloom);
+					}				
+				}
+			}
+			.searchtextarea{
+				background-color: $blocks-gray;				
+			}
+			.searchtextarea{				
+				border-top:3px solid $brand-secondary;
+				input{
+					background-color: #fff;
+					border: 1px solid $gray-lighter;
+					margin-bottom: 18px;
+				}
+				&.searching{
+					background-color: $brand-secondary;
+				}
+			}
+			.contacts{
+				background-color: $blocks-blue;
+				.contact{
+					border-color:darken($blocks-blue, 10%);
+					&.selected{
+						color: $brand-secondary;
+						background-color: darken($blocks-blue, 10%);
+						.information .lastmessage{
+							color: $brand-secondary;
+						}
+					}
+					.information .name{
+						color:$brand-secondary;
+					}
+					.picture{
+						border:none;
+					}
+					&:hover{
+						background-color: darken($blocks-blue, 10%);
+					}
+				}
+			}
+			.searcharea{
+				position:relative; //for loader
+				.heading{
+					border-color:darken($blocks-blue, 10%);
+					padding: .5rem;
+				}
+			}
+		}
+	 	.messages-area{
+			.response{
+				background-color:$btn-primary-bg;
+				color: $btn-primary-color;
+				.message-box .send-button-container button{
+					color: $btn-text-color;
+					height: auto;
+				}
+				&.messaging{
+					background-color: darken($btn-primary-bg, 10%);
+				}
+				.delete-confirmation{
+					.confirm{
+						padding: .5rem;
+    					line-height: 1;
+    					:hover{
+							text-decoration: none;
+						}
+					}
+				}
+			}
+			.profile-header,
+			.messages-header{
+				border-top:5px solid $brand-secondary;
+				background-color: $blocks-gray;
+				@include border-radius();
+			}
+			.messages-header{
+				@include media-breakpoint-down(xs){
+					height: 80px;
+					.actions,
+					.view-toggle{
+						top:35px;
+					}
+				}				
+				.messages-delete{
+					line-height: 1rem;
+					padding: .5rem 1.25rem;
+				}
+				.btn-link{
+					color: $btn-secondary-bg;
+					margin:0;
+					background-color:transparent;
+				}
+				.name-container{
+					.name{
+						float: left;
+						button{							
+							font-size: $font-size-lg;
+							&:before{
+								font-family: fontawesome;
+		    					content: $fa-var-address-card;
+		    					margin-right: 5px;
+								color: $btn-secondary-bg;
+							}
+						}
+					}
+					.status{
+						float: left;
+						padding: .5rem;
+					}
+				}
+			}
+			.messages{
+				background-color: $blocks-blue;
+				.message{
+					.content{
+						border:none;
+						@include border-radius();
+						&.right {
+							background: darken($blocks-gray, 5%);
+							&:after {
+								width: 0;
+								height: 0;
+								border-top: 5px solid transparent;
+								border-bottom: 5px solid transparent;
+								border-left: 5px solid darken($blocks-gray, 5%);
+								content: '';
+								left:100%;
+								position:absolute;
+							}
+						}
+						&.left{
+							background: darken($blocks-blue, 10%);
+							&:before{
+								width: 0;
+								height: 0;
+								border-top: 5px solid transparent;
+								border-bottom: 5px solid transparent;
+								border-right: 5px solid darken($blocks-blue, 10%);
+								content:'';
+								right:100%;
+								position:absolute;
+							}
+						}
+					}
+				}
+			}
+			.profile{
+				background-color: $blocks-blue;
+				@include media-breakpoint-down(xs){
+					.actions{
+						padding-top:30px;
+					}
+				}
+				.name{
+					color: $brand-secondary;
+				}
+				.actions{
+					a[data-action*="profile"]{
+						&:before{
+							font-family: fontawesome;
+							margin:10px;
+						}
+						&.envelope{
+							&:before{
+								content: $fa-var-envelope;
+							}							
+						}
+						&.user-plus{
+							&:before{
+								content: $fa-var-user-plus;
+							}							
+						}
+						&.user-times{
+							&:before{
+								content: $fa-var-user-times;
+							}							
+						}
+						&.times{
+							&:before{
+								content: $fa-var-user-times;
+							}							
+						}
+						&.plus{
+							&:before{
+								content: $fa-var-plus;
+							}							
+						}
+					}
+				}
+			}
+		}
+	}
+}

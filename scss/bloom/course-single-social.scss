@@ -1,0 +1,113 @@
+//SINGLE ACTIVITY
+//SOCIAL
+
+.format-social,
+.path-mod-forum{
+    table.forumheaderlist th.header{
+        border-top: 5px solid $bloom-courses-color;
+    }
+    @include mod-header($bloom-courses-color);
+
+    &:not(#page-mod-forum-view){ //not for the forum view 
+        h2:first-of-type{
+            font-size: initial;
+        }
+    }    
+    h3.discussionname{
+        //background: $blocks-gray;
+        padding: 1rem;
+        border-bottom: 5px solid $bloom-courses-color;
+    }
+    .discussionsubscription{
+        padding: 1rem 0;
+    }
+    .forumaddnew{
+        float: right;
+        margin-bottom: 1.25rem;
+    }
+    .forumpost{
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+        background: $blocks-blue;
+        @include border-radius($border-radius);
+        border: none;
+        &.firstpost{
+            clear:both;
+        }
+        .subject{
+            font-size: $font-size-lg;
+            color: $brand-secondary;
+            border-bottom: 1px solid $gray-lighter;
+            margin-bottom: .5rem;
+            padding: 0 0 .5rem 0;
+        }
+        .maincontent{
+            padding: 1rem;
+        }
+    }
+    :target~.forumpost:before{
+        background: $brand-secondary;
+    }
+    @include media-breakpoint-down(xs) {
+        .formaddnew button{
+            width:100%;
+        }
+    }
+    .discussion-nav{
+        ul{
+            padding: 0;
+        }
+        li{
+            &.prev-discussion,
+            &.next-discussion{
+                background-color:$bloom-accent-color;
+                @extend .btn;
+                @extend %btn-styles;
+                position:relative;
+                width:40%;
+                a{
+                    color: $btn-text-color;
+                    display: block;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+                &:hover{
+                    background-color:darken($bloom-accent-color, 10%);
+                }
+            }
+            &.prev-discussion{
+                &:before{
+                    content: $fa-var-caret-left;
+                    font-family: fontawesome;
+                    color: $btn-text-color;
+                    position:absolute;
+                    left: 10px;
+                    top: 10px;
+                }
+                a{
+                    &:before{
+                        content: 'Previous topic: ';
+                    }
+                }
+            }
+            &.next-discussion{
+                &:after{
+                    content: $fa-var-caret-right;
+                    font-family: fontawesome;
+                    color: $btn-text-color;
+                    position:absolute;
+                    right: 10px;
+                    top: 10px;
+                }
+            }
+        }
+    }
+}
+
+#page-mod-forum-discuss .discussioncontrols .form-inline input{
+    margin: 0.5rem;
+}

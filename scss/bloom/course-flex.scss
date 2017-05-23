@@ -1,0 +1,121 @@
+//FLEXIBLE FORMAT
+
+.format-flexsections{
+  .flexsections-level-0{ //top level
+    .mdl-right{ // add subsection button
+      .addsection{
+        @extend .btn;
+        @extend %btn-styles;
+        @include theme-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+        //@extend .btn-primary;
+        margin: 0;
+        &:before{
+          font-family: FontAwesome;
+          content: $fa-var-plus;
+          margin-right: 5px;
+          font-weight: normal;  
+        }
+        .addsection-text{
+          color: $btn-text-color;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        img{
+          display: none;
+        }
+      }
+    }
+  }
+  
+  ul.flexsections{
+    padding:0;
+    &:not(.flexsections-level-0){
+      padding:0;
+    }
+    > li:not(#section-0){
+      margin: 1.25rem 0 0 0;
+      @include media-breakpoint-up(sm) {
+        padding: 1.25rem;
+      }
+      border: $border-width solid darken($blocks-blue, 10%);
+      border-top: 5px solid $bloom-courses-color !important;
+      @include border-top-radius(0);
+      .controls{
+        margin-bottom: 1.25rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        a, span{
+          background: $brand-secondary;
+          @include border-radius($border-radius);
+          margin-left: 10px;
+          &:before{
+            @include bloom-icon-insert("", $btn-text-color, 24px, $font-size-base);
+          }
+          &.settings{
+            order: 4;
+            &:before{
+              content: $setting;
+            }
+          }
+          &.delete{
+            order: 5;
+            background: transparent;
+            &:before{
+              content: $cross;
+              color: $brand-secondary;
+            }
+          }
+          &.move{
+            order: 0;
+            &:before{
+              content: $drag;
+            }
+          }
+          &.show{
+            order: 2;
+            &:before{
+              content: $hide;
+            }
+          }
+          &.hide{
+            order: 2;
+            &:before{
+              content: $show;
+            }
+          }
+          &.mergeup{
+            order: 1;
+            &:before{
+              content: $merge;
+            }
+          }
+          &.marker{
+            order: 3;
+            &:before{
+              content: $unpinned;
+            }
+          }
+          &.marked{
+            order: 3;
+            &:before{
+              content: $pinned;
+            }
+          }
+          img{ //have to keep this in order to show the title on hover - there must be a better way!
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      .content{
+        ul.section{
+            padding: 0;          
+        }
+      }
+    }
+  }    
+}    
+

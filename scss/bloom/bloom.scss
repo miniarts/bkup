@@ -1,0 +1,49 @@
+
+// Import the bootstrap variables.
+@import 'variables.scss';
+//@import '../../boost/scss/moodle.scss'; //bootstrap 4 and moodle
+//@import 'bloom-inherit.scss'; //bootstrap 4 and moodle
+@import 'fontawesome/font-awesome.scss';
+
+@import 'mixins.scss';
+@import 'font.scss';
+
+/*** END OF BASE **/
+
+@import 'base.scss';
+// /@import 'header.scss';
+@import 'footer.scss';
+@import 'search.scss';
+@import 'blocks.scss';
+@import 'table.scss';
+@import 'buttons.scss';
+@import 'radio.scss';
+@import 'file-picker.scss';
+
+@import 'login.scss';
+@import 'infopanel-revised.scss';
+@import 'agenda.scss';
+@import 'slideIn.scss';
+@import 'zoom.scss';
+@import 'message.scss';
+@import 'settings.scss';
+@import 'profile-page.scss';
+@import 'admin-page.scss';
+@import 'assignment.scss';
+@import 'question.scss';
+@import 'grade.scss';
+@import 'category.scss';
+
+@import 'course-default.scss';
+@import 'course-grid.scss';
+@import 'course-flex.scss';
+@import 'course-collapsed.scss';
+@import 'course-single-social.scss';
+@import 'course-topics-weekly.scss';
+
+//mod
+@import 'mod-assign.scss';
+@import 'mod-feedback.scss';
+@import 'mod-coursework.scss';
+
+@import 'ajax-calendar.scss';

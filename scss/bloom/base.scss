@@ -1,0 +1,220 @@
+*:focus, *:active{
+	outline: none;
+}
+.path-my #region-main-box{
+	@include media-breakpoint-down(xs) {
+		padding: 0 0.3rem;
+	}
+}
+
+/* fix for sticky footer */
+body{
+	padding-top:$navbar-height;
+}
+#page{
+	margin-top:0;
+}
+/* fix for sticky footer */
+
+#page-navbar{
+	padding-right:1rem;
+}
+/*horizontal scroll for tables
+  if no double scroll, div[role="main"] will have horizontal scroll by default
+*/
+#region-main.has-block:not(.doubleScroll){
+	div[role="main"]{
+		overflow-x: auto;
+		padding-top: 3px; //for the icon in info panel which has absolute positioning and overflow-y:visible; overflow:auto; doesn' work
+    	margin-top: -3px;
+    	> form{
+    		padding:0 15px;
+    	}
+	}
+}
+.doubleScroll-scroll{
+	height:2px;
+}
+.table-wrapper,
+.doubleScroll-scroll-wrapper{
+    clear:both;
+}
+#page-content{
+	clear:both;
+	position:relative;
+	@include media-breakpoint-up(sm) {
+		padding: 1rem;
+	}
+	//overflow-x: hidden;//for zooming but may have side effect - it did
+	#region-main-box, #block-region-side-pre{
+		margin-top: 1.25rem;
+		@extend .clearfix;
+	}
+}
+.container #page-content,
+.container-fluid #page-content{
+	@include make-row();
+}
+#region-main{
+	@include media-breakpoint-down(md) {
+		float:none;
+	}
+}
+
+//general headings 
+h1, h2, h3{
+	color: $brand-secondary;
+}
+h2:first-of-type{ //page headings
+	font-size: $font-size-h1;
+}
+@include media-breakpoint-up(md){
+	h1 
+	//h2:first-of-type
+	{
+		padding-left: 1rem;
+	}
+}
+
+.ui-widget{
+	font-family: $font-family-base !important;
+}
+
+
+// container-fluid max size
+#page.container-fluid,
+footer > .container-fluid{
+  max-width:1480px;
+}
+
+
+// text input
+input[type="text"]{
+	min-width: 150px;
+	@include bloom-input-field($bloom-accent-color);
+}
+input[type="search"]{
+	min-height: 3rem;
+	&:active, &:focus{
+		border-width: 3px solid $bloom-accent-color;
+	}
+}
+
+abbr[title], abbr[data-original-title]{ // removes unnecassary decoration from asterisks
+	text-decoration: none;
+	border-bottom: none;
+	margin: 5px;
+}
+
+// .form-inline .form-group{
+// 	vertical-align: baseline;
+// }
+
+
+a[data-toggle="popover"]{ // removes added height, width, margin from helper icons inherited from .btn
+  margin: 0;
+  height: auto;
+  min-width: 0;
+}
+
+.popover{ // styling of popovers
+	color: $brand-secondary;
+	@include border-left-radius(0);
+	font-size: $font-size-base;
+	border-left: 5px solid $bloom-accent-color;
+	max-width: 300px;
+	.popover-arrow {
+		border-color: transparent;
+	}
+}
+
+
+/* DROPDOWN */
+.dropdown{ 
+	display: inline-block;
+	@include border-radius($border-radius);
+	>.dropdown-menu{
+		width: 250px;
+		margin-top: 6px !important; //test site has margin-top: 2px!important;
+		padding: 0;
+		border: $border-width solid darken($blocks-blue, 5%);
+		border-top: 5px solid $brand-secondary;
+		@include border-top-radius(0);
+		.dropdown-divider{
+			display:none;
+		}
+		.dropdown-item{
+			//temp: icon class is added in the menu-action and breaking the layout
+			width: 100%;
+		    box-sizing: border-box;
+		    height: auto;
+		    //
+			padding: 1.25rem 1.6rem;
+			text-align: left;
+			text-transform: none;
+			background: transparent;
+			@include transition(background .3s ease-out);
+			&:hover{
+				background: darken($blocks-blue, 5%);
+			}
+			span{
+				color: $brand-secondary; // menu link
+				line-height: 1.6rem;
+				vertical-align: top;
+			}
+		}
+	}
+	.dropdown-toggle{
+		&:after{
+			border-top: 5px solid $bloom-header-text-color;
+		    border-right: 5px solid transparent;
+		    border-left: 5px solid transparent;
+			@include transition(all .15s ease-out);
+		}
+		&[aria-expanded="true"]{ // SITE NAVIGATION DROPDOWN expnaded
+			&:after{
+				border-top-color: $bloom-accent-color;
+				transform: rotate(-180deg);
+			}
+		}
+	}
+}
+#page-course-management{
+	.listing-actions category-listing-actions{
+		a{
+			@extend .btn;
+			@extend %btn-styles;
+			@extend .btn-secondary;
+		}
+	}
+	.action-menu .dropdown-toggle{
+		img{
+			width: initial;
+			height: initial;
+		}
+		&:after{
+			border: none;
+		}
+	}
+	.listitem > div{
+		padding:.5rem 0;
+	}
+}
+
+/// MOODLE BUG when flex mode is turned on
+// the category management page has Bootstrap 2 (.row-fluid .span5 etc.)
+// I'll only apply this fix for this particular page for now
+
+#page-course-management .row-fluid{
+	@include make-row();
+}
+
+//moodle bug
+#page-grade-report-grader-preferences,
+#page-calendar-export,
+#page-backup-backupfilesedit,
+#page-user-files{
+	form.mform{
+		@extend .container;
+	}	
+}

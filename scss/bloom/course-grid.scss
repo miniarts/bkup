@@ -1,0 +1,194 @@
+//GRID FORMAT
+
+.format-grid{
+  .course-content{  
+    ul.gtopics-0{
+      padding-left:0;
+      #section-0{ 
+      }  
+      li.section.main{
+        border-bottom: none;
+        .content{
+          margin:0;
+        }
+      } 
+    }
+    ul.gtopics{
+      li.section .content{
+        margin:0;
+      }
+    }
+  }
+
+  &.zoomIn{
+    #gridiconcontainer{
+      ul.gridicons li{
+        @include media-breakpoint-up(xl) {
+          @include make-col(3);
+        }
+      }
+    }
+  }
+
+  a[title*="Move"]{
+    @extend .btn;
+    @extend %btn-styles;
+  }
+  //ipad: 3 cols
+  // in between: 2 cols
+  //phones 1 col
+  #gridiconcontainer{
+    @extend .container-fluid;
+    ul.gridicons{
+      @include make-row();
+      width: auto;
+      li{
+        padding: 0.6rem;
+        @include make-col(12); 
+        @include media-breakpoint-up(sm) {
+          @include make-col(6);
+        }                
+        @include media-breakpoint-up(md) { 
+          @include make-col(4);
+        }       
+        .gridicon_link{
+          display: block;
+          cursor: pointer;
+          position: relative;
+         .icon_content{
+            position: absolute;
+            bottom: 0;
+            background: $bloom-courses-color;
+            opacity: .9;
+            width: 100%;
+            padding: 1rem;
+            min-height: 25%;
+            color: #fff;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            @include transition(height .25s ease-out);
+          }
+          .image_holder{
+            width: 100%;
+            border:none;
+            height: 160px;
+            object-fit: cover;
+            img{
+              width: 100%;
+              min-height: 160px;
+              @include transition(opacity .25s ease-out);
+            }
+          }
+          .tooltip{
+            width: 95vw !important;
+            top: 0!important;
+            padding:2rem!important;
+            max-width: 800px;
+          }       
+          &:hover{
+            .image_holder{
+              box-shadow: none;
+              img{
+                opacity: 1;
+              }
+            }
+            .icon_content{
+              height: 100%;
+            }
+          }      
+        }
+        &.currenticon{
+          background: transparent;
+          .gridicon_link{
+            background: $blocks-blue;
+            border-color: darken($blocks-blue, 10%);
+            @include transition(border-color .2s ease);
+          }
+          .image_holder{
+            box-shadow: none;
+          }
+        }
+        &.currentselected{
+          background: lighten($bloom-courses-color, 50%);
+        }        
+        img.new_activity{
+          display: none;
+          + .image_holder:before{
+            content: "new";
+            color: $btn-text-color;
+            font-size: $font-size-lg;
+            top:0;
+            right:0;
+            position:absolute;
+            background: $brand-secondary;
+            padding:0 1rem;
+            @include border-radius($border-radius);
+          }
+        }
+        a[title="Set or change image"]{
+          @extend .btn;
+          @extend %btn-styles;
+          @include btn-icon($setting);
+          img{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &.editing{
+    #gridiconcontainer ul.gridicons li{
+      height: 270px;
+    }
+    .course-content ul.section{
+      padding:0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+  &:not(.editing){
+    #gridshadebox #gridshadebox_content{
+      border: 5px solid $bloom-courses-color;
+    }
+  }
+  //lightbox
+  #gridshadebox #gridshadebox_content{
+    @include border-radius($border-radius);
+    top: calc($navbar-height + 10%);
+    border: $border-width solid darken($blocks-blue, 10%);
+    min-height: 80vh;
+    .gtopics{
+      padding: 1.25rem;
+      margin: 0;
+      li[id^="section-"]{
+        margin-bottom: 1.25rem;
+      }
+      .summary{
+        img{
+          display: none;
+        }
+      }
+    }
+    #gridshadebox_close{
+      cursor: pointer;
+      top:10px;
+      right:10px;
+    }
+    .gridshadebox_area{
+      img{
+        top:48%;
+        width: 100%;
+        height: auto;
+      }
+      cursor: pointer;
+    }
+    .sectionname{
+      margin-bottom: 1.25rem;
+    }
+  }
+  
+  .activity{
+    border-bottom: none;
+  }
+}
