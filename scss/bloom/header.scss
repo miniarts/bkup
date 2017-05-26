@@ -421,10 +421,6 @@ header[role = banner]{
 				}
 			}
 		}
-		
-	}
-	&.navbar-light > .container-fluid{
-		border-bottom: 5px solid $brand-primary;
 	}
 }
 
@@ -437,10 +433,11 @@ body:not(.path-login){
 			@extend .collapse;
 		}
 	}
-	&.navbar-dark{ //dark header
-		> .container-fluid{
-			border-bottom: 5px solid $brand-secondary;
-		}
+	.navbar-dark > .container-fluid{
+		border-bottom: 5px solid $brand-secondary;
+	}
+	.navbar-light > .container-fluid{
+		border-bottom: 5px solid $brand-primary;
 	}
 }
 
