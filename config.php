@@ -27,6 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once(__DIR__ . '/lib.php');
 
 $THEME->name = 'bloom';
+$THEME->parents = ['boost'];
 $THEME->sheets = ['font-awesome.min', 'custom'];
 $THEME->editor_sheets = [];
 $THEME->scss = 'moodle';
@@ -161,7 +162,7 @@ $THEME->parents = [];
 $THEME->enable_dock = false;
 $THEME->csstreepostprocessor = 'theme_bloom_css_tree_post_processor';
 $THEME->extrascsscallback = 'theme_bloom_get_extra_scss';
-$THEME->prescsscallback = 'theme_bloom_get_pre_scss';
+$THEME->prescsscallback = 'theme_bloom_get_pre_scss'; 
 $THEME->yuicssmodules = array();
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';

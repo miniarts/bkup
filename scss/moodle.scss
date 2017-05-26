@@ -2,12 +2,13 @@
 $breadcrumb-divider: "▶" !default;
 $breadcrumb-divider-rtl: "◀" !default;
 
+@import 'bloom/variables.scss';
+
 // Import the bootstrap variables.
 //@import "bootstrap/bootstrap";
-
 // Core variables and mixins
 //@import "bootstrap/custom";
-@import "bootstrap/variables";
+//@import "bootstrap/variables";
 @import "bootstrap/mixins";
 
 // Reset and dependencies
@@ -56,7 +57,6 @@ $breadcrumb-divider-rtl: "◀" !default;
 
 
 
-
 // Specific overrides to make Bootstrap RTL.
 @import "moodle/bootstrap-rtl";
 
@@ -66,7 +66,7 @@ $breadcrumb-divider-rtl: "◀" !default;
 @import "moodle/icons";
 @import "moodle/admin";
 //@import "moodle/blocks";
-@import "moodle/bootswatch";
+//@import "moodle/bootswatch";
 //@import "moodle/calendar";
 @import "moodle/course";
 @import "moodle/drawer";

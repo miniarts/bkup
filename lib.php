@@ -102,29 +102,43 @@ function theme_bloom_get_pre_scss($theme) {
         'tab1' => ['bloom-courses-color'],
         'tab2' => ['bloom-assignments-color'],
         'tab3' => ['bloom-user-color'],
-        'footer' => ['gray-dark'],
+        'footer' => ['footer-color'],
         'blocksgray' => ['blocks-gray'],
-        'blocksblue' => ['blocks-blue']
-        // 'btntextcolor' => ['btn-text-color'],
-        // 'headertextcolor' => ['bloom-header-text-color']
+        'blocksblue' => ['blocks-blue'],
+        'primary' => ['header-text-color']
     ];
 
-    // Prepend variables first.
-    foreach ($configurable as $configkey => $targets) {
-        $value = isset($theme->settings->{$configkey}) ? $theme->settings->{$configkey} : null;
-        if (empty($value)) {
-            continue;
+    if (!empty($theme->settings->invert)) {
+        // Prepend variables first.
+        foreach ($configurable as $configkey => $targets) {
+            $value = isset($theme->settings->{$configkey}) ? $theme->settings->{$configkey} : null;
+            if (empty($value)) {
+                continue;
+            }
+            array_map(function($target) use (&$scss, $value) {
+                $scss .= '$' . $target . ': ' . $value . ";\n";
+            }, (array) $targets);
         }
-        array_map(function($target) use (&$scss, $value) {
-            $scss .= '$' . $target . ': ' . $value . ";\n";
-        }, (array) $targets);
+    }else{
+        foreach ($configurable as $configkey => $targets) {
+            $value = isset($theme->settings->{$configkey}) ? $theme->settings->{$configkey} : null;
+            if (empty($value)) {
+                continue;
+            }
+            array_map(function($target) use (&$scss, $value) {
+                if($target == 'header-text-color'){
+                        $value = '#fff';
+                }
+                $scss .= '$' . $target . ': ' . $value . ";\n";
+            }, (array) $targets);
+        }
     }
 
     // Prepend pre-scss.
     if (!empty($theme->settings->scsspre)) {
         $scss .= $theme->settings->scsspre;
     }
-
+//echo var_dump($scss);
     return $scss;
 }
 

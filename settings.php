@@ -29,12 +29,12 @@ if ($ADMIN->fulltree) {
     $page = new admin_settingpage('theme_bloom_general', get_string('generalsettings', 'theme_bloom'));
 
 
-    $name = 'theme_bloom/dashboard';
-    $title = get_string('dashboard', 'theme_bloom');
-    $description = get_string('dashboard_desc', 'theme_bloom');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
+    // $name = 'theme_bloom/dashboard';
+    // $title = get_string('dashboard', 'theme_bloom');
+    // $description = get_string('dashboard_desc', 'theme_bloom');
+    // $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    // $setting->set_updatedcallback('theme_reset_all_caches');
+    // $page->add($setting);
 
     $name = 'theme_bloom/calendar';
     $title = get_string('calendar', 'theme_bloom');
@@ -43,12 +43,12 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    $name = 'theme_bloom/mycourse';
-    $title = get_string('mycourse', 'theme_bloom');
-    $description = get_string('mycourse_desc', 'theme_bloom');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
+    // $name = 'theme_bloom/mycourse';
+    // $title = get_string('mycourse', 'theme_bloom');
+    // $description = get_string('mycourse_desc', 'theme_bloom');
+    // $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    // $setting->set_updatedcallback('theme_reset_all_caches');
+    // $page->add($setting);
 
     // Logo file setting.
     $name = 'theme_bloom/logo';
@@ -122,9 +122,9 @@ if ($ADMIN->fulltree) {
 
     $page = new admin_settingpage('theme_bloom_color', get_string('colorsettings', 'theme_bloom'));
 
-    $name = 'theme_bloom/inverse';
-    $title = get_string('inverse', 'theme_bloom');
-    $description = get_string('inverse_desc', 'theme_bloom');
+    $name = 'theme_bloom/invert';
+    $title = get_string('invert', 'theme_bloom');
+    $description = get_string('invert_desc', 'theme_bloom');
     $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);

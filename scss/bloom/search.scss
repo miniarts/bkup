@@ -15,7 +15,7 @@
 		@include transition(background .2s ease-out);
 		&:before{
 			font-family: bloom;
-			color: $bloom-header-text-color;
+			color: $header-text-color;
 			content: '6';  // inserts search icon from bloom icon font
 			font-size: 1.5rem;
 		}

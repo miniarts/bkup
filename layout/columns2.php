@@ -36,6 +36,18 @@ $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
+
+if (!has_capability('moodle/site:config', context_system::instance())) {
+    $extraclasses[] = 'current-user-is-student';
+}
+if (!isloggedin()) {
+    $extraclasses[] = 'current-user-is-logged-out';
+}
+if (isguestuser()) {
+    $extraclasses[] = 'current-user-is-guest';
+}
+
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;

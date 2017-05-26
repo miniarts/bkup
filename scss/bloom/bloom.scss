@@ -1,8 +1,9 @@
 
 // Import the bootstrap variables.
-@import 'variables.scss';
+//@import 'variables.scss';
 //@import '../../boost/scss/moodle.scss'; //bootstrap 4 and moodle
 //@import 'bloom-inherit.scss'; //bootstrap 4 and moodle
+
 @import 'fontawesome/font-awesome.scss';
 
 @import 'mixins.scss';
@@ -11,7 +12,7 @@
 /*** END OF BASE **/
 
 @import 'base.scss';
-// /@import 'header.scss';
+@import 'header.scss';
 @import 'footer.scss';
 @import 'search.scss';
 @import 'blocks.scss';

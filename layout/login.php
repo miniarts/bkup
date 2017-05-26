@@ -23,8 +23,18 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright 2016 Damyon Wiese
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+$extraclasses = [];
+if (!has_capability('moodle/site:config', context_system::instance())) {
+    $extraclasses[] = 'current-user-is-student';
+}
+if (!isloggedin()) {
+    $extraclasses[] = 'current-user-is-logged-out';
+}
+if (isguestuser()) {
+    $extraclasses[] = 'current-user-is-guest';
+}
 
-$bodyattributes = $OUTPUT->body_attributes();
+$bodyattributes = $OUTPUT->body_attributes($extraclasses);
 
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),

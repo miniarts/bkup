@@ -1,99 +1,64 @@
-// popover needs to be reviewed
 
+a.navbar-brand{
+	padding: 0;
+	width:20%;
+	max-width: 140px;
+	.logo{
+		img{			
+			margin: 0.8rem 0.8rem 0.8rem 0;
+			max-height: 32px;			
+		}
+	}
+}
 
 #sidenav .navbar-nav .nav-link,
 header[role = banner] .navbar-nav .nav-link{ 
-	@include bloom-label($font-size-sm, 400, $bloom-header-text-color);
-	display: block;
+	@include bloom-label($font-size-sm, 400, $header-text-color);
+	height: calc(100% + 5px);
 	padding: 1.5rem;
 	border-bottom: 5px solid transparent;
-	margin-left: 0 !important;
-	//color: $bloom-header-text-color !important;
 	@include transition(border .25s ease-out);
 	&:hover{
 		border-bottom: 5px solid $bloom-accent-color;
 	}
 }
 
-
 header[role = banner]{
 	#bd-main-nav{
 		min-height:$navbar-height; 
 	}
-	min-height: 3rem;
+	box-sizing: border-box;
 	padding: 0;
-	&:after{ //not sure why it was written like this
-		border-top: 5px solid $brand-primary;
-		width: 100%;
-		margin-bottom: -6px;
-		position: relative;
-		transform: translateY(-5px);
-	}
-
-	&.navbar {
-    max-height: initial;
-	}
-	.navbar-brand, .navbar-toggler, .navigation{
-		position: relative;
-		z-index: 6;
-	}
+	height: $navbar-height; 
 
 	// NAVIGATION STYLING
 	> .container-fluid{
 		max-width:1480px;
-
+		height: 100%;
 		// BURGER menu
 		.navbar-toggler{
 			padding: 1rem;
 			margin: 0.5rem 0 1rem 0;
 			border: none;
-			color: $bloom-header-text-color;
+			color: $header-text-color;
 			&:focus{
 				outline: none;
 			}
 		}
-	}
-	.nav.navbar-nav{
-		display:block;
-		position: relative;
-		z-index: 5;
-		@extend .clearfix;
-		.dropdown{
-			&.nav-item{
-			 	margin-left: 0;
-				>.dropdown-menu{  // SITE NAVIGATION dropdown menus
-					margin-top: -5px !important; //test site has margin-top: 2px!important;
-					border: none;
-					border-top: 5px solid $bloom-accent-color;
-					background: $brand-primary;
-					.dropdown-item{
-						overflow: hidden;
-						text-overflow: ellipsis;
-						padding: 1.25rem 1.6rem;
-						color: $bloom-header-text-color;
-						&:hover{
-							background: darken($brand-primary, 10%);
-						}
-					}
-				}
-			}
+		.nav.navbar-nav{
+			height: 100%;
 		}
 	}
+
 	// USERMENU
 	.usermenu{
 		border-radius: $border-radius;
-		float: right;
-		span:not(.menu-action-text){
-			color: $bloom-header-text-color;
-		}
 		.menubar{
-			.usertext{
-				line-height: 1rem;
-			}
-
 			// USERMENU (containing profile, messages, preferences etc.)
 			.dropdown{
-				margin-top: -5px;
+    			margin: -5px 0 0;
+			    height: 43px;
+			    padding: 3px 0 3px 6px;
 				@include transition(background .2s ease-out);
 				&:before{
 					content: "";
@@ -113,16 +78,12 @@ header[role = banner]{
 					}
 				}
 				>a.dropdown-toggle{
-					margin: 0 7px;
+					color: $header-text-color;
 					&:after{
 						display: none; // hide user dropdown arrow
 					}
 					.avatars{
-						display: inline-block;
-						margin-left: 0.5rem;
-						padding: 5px 0;
 						.avatar > img{
-							margin: 0;
 							border-radius: 50%;
 						}
 					}
@@ -199,7 +160,9 @@ header[role = banner]{
 	// Searchbox, notifications, messages
 	.navigation{
 		float:right;
-		margin-top: 9px;
+		padding:.5rem;
+		margin-top: 5px; // match the border bottom
+		height: 100%;
 		.popover-region{
 			float:left;
 			margin-right: 0.5rem;
@@ -238,7 +201,7 @@ header[role = banner]{
 					top: 34px;
 					right: 50%;
 					transform: translateX(50%);
-					z-index: 2;
+					//z-index: 2;
 					@include transition(border-color .2s ease-out);
 				}
 				&:before{
@@ -256,8 +219,8 @@ header[role = banner]{
 				&:before{
 					display: inline-block;
 					font-family: bloom;
-					color: $bloom-header-text-color;
-					content: 'c';  // inserts messages icon from bloom icon font
+					color: $header-text-color;
+					content: $messages;  // inserts messages icon from bloom icon font
 					font-size: 1.6rem;
 				}
 			}
@@ -265,8 +228,8 @@ header[role = banner]{
 				&:before{
 					display: inline-block;
 					font-family: bloom;
-					color: $bloom-header-text-color;
-					content: 'd';  // inserts notifications icon from bloom icon font
+					color: $header-text-color;
+					content: $notifications;  // inserts notifications icon from bloom icon font
 					font-size: 1.6rem;
 				}
 			}
@@ -308,7 +271,7 @@ header[role = banner]{
 							@extend .btn;
 							@extend %btn-styles;
 							@include theme-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-							// /@extend .btn-primary;
+							
 							margin: 0 !important;
 						}
 					}
@@ -330,7 +293,7 @@ header[role = banner]{
 							@extend .btn;
 							@extend %btn-styles;
 							@include theme-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-							//@extend .btn-secondary;
+							
 							margin: 0 !important;
 							&:after{
 								content: "Mark all as read";
@@ -394,14 +357,10 @@ header[role = banner]{
 			}
 		}
 	}
-	//random z-index/absolute positioning should be removed from the header later
-	//it makes no sense but these are added as a temp solution
-	//replacing the core image will be faster than adding css
 	.cog-container{
 		@extend .pull-right;
 		margin-top: 6px;
 		margin-right: .5rem;
-		z-index: 6;
 		position:relative;
 		width: 42px;
 		height: 42px;
@@ -416,12 +375,56 @@ header[role = banner]{
 				background-color: $bloom-accent-color;
 			}
 			&:before{
-				@include bloom-icon-insert( $setting, $bloom-header-text-color, 42px, 1.6rem);
+				@include bloom-icon-insert( $setting, $header-text-color, 42px, 1.6rem);
 			}
 		}
 		img{
 			display: none;
 		}
+	}
+	.action-menu .dropdown-toggle{
+		color: $brand-primary;
+	}
+	.nav.navbar-nav{
+		.dropdown{
+			&.nav-item{
+			 	margin-left: 0;
+				>.dropdown-menu{  
+					margin-top: -5px !important; //test site has margin-top: 2px!important;
+					border: none;
+					.dropdown-item{
+						overflow: hidden;
+						text-overflow: ellipsis;
+						padding: 1.25rem 1.6rem;
+						&:hover{
+							//background: darken($brand-secondary, 10%);
+						}
+					}
+				}
+			}
+		}
+	}
+	&.navbar-dark{ //dark header
+		.nav.navbar-nav{
+			.dropdown{
+				&.nav-item{
+					>.dropdown-menu{  
+						border-top: 5px solid $bloom-accent-color;
+						background: $brand-secondary;
+						.dropdown-item{
+							color: $header-text-color;
+							&:hover{
+								background: darken($brand-secondary, 10%);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	&.navbar-light > .container-fluid{
+		border-bottom: 5px solid $brand-primary;
 	}
 }
 
@@ -434,27 +437,18 @@ body:not(.path-login){
 			@extend .collapse;
 		}
 	}
-}
-
-// BRAND ADJUSTMENTS
-//
-a.navbar-brand{
-	padding: 0;
-	width:20%;
-	max-width: 140px;
-	.logo{
-		img{			
-			margin: 0.8rem 0.8rem 0.8rem 0;
-			max-height: 32px;			
+	&.navbar-dark{ //dark header
+		> .container-fluid{
+			border-bottom: 5px solid $brand-secondary;
 		}
 	}
 }
 
 
-.navbar-inverted{
+/*.navbar-inverted{
 	background-color: $brand-secondary;
 	@extend .navbar-dark;
-}
+}*/
 
 // ADJUSTMENT TO ICONS IN USERMENU (hides default moodle icons and inserts
 // icons from bloom_icon_font)

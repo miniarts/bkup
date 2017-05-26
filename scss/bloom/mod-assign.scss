@@ -255,7 +255,7 @@
         &:after{
             font-family: fontawesome;
             content: $fa-var-filter;
-            color:$bloom-header-text-color;
+            color:$header-text-color;
         }
         img{
             display: none;
@@ -320,7 +320,7 @@
         a:last-of-type::after{
             font-family: fontawesome;
             content: $fa-var-cog;
-            color:$bloom-header-text-color;
+            color:$header-text-color;
         }
         img{
             display: none;
@@ -933,7 +933,7 @@
         border-bottom: 5px solid $brand-secondary;
         background-color:$brand-primary;
         a{
-           color:$bloom-header-text-color;
+           color:$header-text-color;
         }
     }
     @include media-breakpoint-down(sm){
@@ -1263,7 +1263,7 @@
             }
         }
         span[data-region="user-count-summary"]{
-            color:$bloom-header-text-color;
+            color:$header-text-color;
         }
         .form-autocomplete-suggestions{
             margin-top:0;

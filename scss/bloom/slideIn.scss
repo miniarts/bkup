@@ -51,14 +51,14 @@
 		border-radius: 0;
 		background: $brand-secondary;
 		.dropdown-item{
-		 	color: $bloom-header-text-color;
+		 	color: $header-text-color;
 		 	white-space: initial;
 		 	span{
-		 		color: $bloom-header-text-color;
+		 		color: $header-text-color;
 		 	}
 		}
 		a:before{
-			color: $bloom-header-text-color;
+			color: $header-text-color;
 		}		
 	}
 	.navbar-nav{
@@ -89,9 +89,9 @@
 		width:100%;
 		.login{
 			margin-left: 1.25rem;
-			color: $bloom-header-text-color;
+			color: $header-text-color;
 			a{
-				color:$bloom-header-text-color;
+				color:$header-text-color;
 			}
 		}
 		.dropdown {
@@ -123,7 +123,7 @@
 					}
 				}
 				.usertext{
-					color: $bloom-header-text-color;
+					color: $header-text-color;
 					position: absolute;
 					left: 5rem;
 					display: inherit;
@@ -157,7 +157,7 @@
 		z-index: 3;
 		height: 2.5rem;
 		width: 2.5rem;
-		color: $bloom-header-text-color;
+		color: $header-text-color;
 	}
 	.search-input-wrapper-custom {
 		@extend .expanded;
@@ -178,6 +178,6 @@
 }
 
 .navbar-toggler{
-	@extend .pull-xs-right;
-	@extend .hidden-lg-up;
+	//@extend .pull-xs-right;
+	//@extend .hidden-lg-up;
 }

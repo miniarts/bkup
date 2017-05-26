@@ -68,7 +68,9 @@
 	.leaf, .branch{
 		@include transition(background .25s ease);
 		&:hover{
+			&:after{
 			background: darken($blocks-gray, 5%);
+		}
 		}
 	}
 }

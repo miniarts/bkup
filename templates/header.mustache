@@ -22,10 +22,10 @@
     <div class="container-fluid navbar-nav">
 
         <div data-region="drawer-toggle">
-            <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><span aria-hidden="true">&#9776;</span><span class="sr-only">{{#str}}expand, core{{/str}}</span></button>
+            <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 navbar-toggler" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><span aria-hidden="true"><i class="fa fa-bars" aria-hidden="true"></i></span><span class="sr-only">{{#str}}expand, core{{/str}}</span></button>
         </div>
 
-        <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}
+        <!-- a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}
             {{^ output.should_display_navbar_logo }}
                 hidden-sm-down
             {{/ output.should_display_navbar_logo }}
@@ -36,19 +36,36 @@
                 </span>
             {{/ output.should_display_navbar_logo }}
             <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
+        </a -->
+        <a href="{{{ config.wwwroot }}}" class="navbar-brand">
+            <div class="logo">
+                {{#output.get_logo_url }}
+                    <img src="{{ output.get_logo_url }}" alt="{{sitename}}" class="hidden-xs-down">
+                {{/output.get_logo_url}}
+
+                {{#output.get_logocompact_url }}
+                    <img src="{{ output.get_logocompact_url }}" alt="{{sitename}}" class="hidden-sm-up">
+                {{/output.get_logocompact_url}}
+            </div>
         </a>
+        
+        <div class="navigation">
+            <!-- user_menu -->
+            {{{ output.user_menu }}}
 
-        <!-- user_menu -->
-        {{{ output.user_menu }}}
+            <!-- navbar_plugin_output -->
+            {{{ output.navbar_plugin_output }}}
 
-        <!-- navbar_plugin_output -->
-        {{{ output.navbar_plugin_output }}}
+            <!-- search_box -->
+            <span class="hidden-md-down">
+            {{{ output.search_box }}}
+            </span>
+        </div>
 
-        <!-- search_box -->
-        <span class="hidden-md-down">
-        {{{ output.search_box }}}
-        </span>
-
+        {{# output.show_cog }}
+           {{{ output.show_cog }}}
+        {{/ output.show_cog }}
+        
         <nav class="nav navbar-nav hidden-md-down">
             <!-- custom_menu -->
             {{{ output.custom_menu }}}

@@ -47,8 +47,6 @@ $string['region-side-pre'] = 'Right';
 
 
 //setting strings
-// $string['invert'] = 'Invert';
-// $string['invert_desc'] = 'Invert colours';
 $string['dashboard'] = 'Show dashboard';
 $string['dashboard_desc'] = 'Show dashboard in the header menu';
 $string['calendar'] = 'Show calendar';
@@ -61,8 +59,8 @@ $string['logocompact'] = 'Small logo';
 $string['logocompact_desc'] = 'Logo for smaller screens (mobile phones, tablets etc)';
 $string['logomain'] = 'Logo for login page';
 $string['logomain_desc'] = 'Logo for login page';
-$string['inverse'] = 'Inverted header background';
-$string['inverse_desc'] = 'Inverts the background colour and text colour for the header.  When this is turned on, the primary colour will be the header background colour.';
+$string['invert'] = 'Light header background colour';
+$string['invert_desc'] = 'Inverts the background colour and text colour for the header.  When this is turned on, the backgroud will be white and links will be in primary colour.';
 $string['primary'] = 'Primary colour';
 $string['primary_desc'] = 'Header, primary buttons, headtings, labels';
 $string['secondary'] = 'Secondary colour';

@@ -17,14 +17,14 @@
       margin-right: 3px;
       .nav-link{
         background-color: $blocks-gray;
-        color: $brand-secondary;
+        color: $brand-primary;
         border: none;
         &:hover, &:active, &:focus{
           border: none;
           background-color: darken($blocks-gray, 5%);
         }
         &.active{
-          background-color: $brand-secondary;
+          background-color: $brand-primary;
           color: $btn-text-color;
           border: none;
         }
@@ -40,9 +40,9 @@
         margin-bottom: 8px;
         .nav-link{
           text-align: center;
-          border-bottom: 3px solid $brand-secondary;
+          border-bottom: 3px solid $brand-primary;
           &:hover, &:active, &:focus{
-            border-bottom: 3px solid $brand-secondary;
+            border-bottom: 3px solid $brand-primary;
           }
           &.active{
             border-bottom: 0;
@@ -52,7 +52,7 @@
     }
   }
   .tab-content{
-    border-top: 3px solid $brand-secondary;
+    border-top: 3px solid $brand-primary;
     @media (max-width: 767px){
       border-top: none;
     }
@@ -77,11 +77,11 @@
           font-size: 1rem;
           text-transform: uppercase;
           letter-spacing: 0.5px;
-          color: $brand-secondary;
+          color: $brand-primary;
           font-weight: 900;
           display: inline-block;
           padding: 0 1.25rem .4rem 0;
-          border-bottom: 3px solid $brand-secondary;
+          border-bottom: 3px solid $brand-primary;
           a{
             color: inherit;
           }

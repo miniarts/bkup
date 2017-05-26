@@ -33,7 +33,7 @@
   .dropdown{
     &.open{
       &:before{
-        border-top: 5px solid $brand-secondary;
+        border-top: 5px solid $brand-primary;
       }
     }
   }
@@ -51,20 +51,20 @@
       content: $setting; //settings icon
       font-family: bloom;
       font-size: 1rem;
-      color: $brand-secondary;
+      color: $brand-primary;
     }
   }
 }
 
 //navigation, tab labels, block header
-@mixin bloom-label($size, $text-weight:900, $text-color:$brand-secondary){
+@mixin bloom-label($size, $text-weight:900, $text-color:$brand-primary){
 	font-weight: $text-weight;
 	color: $text-color;
  	text-transform: uppercase;
  	letter-spacing: 0.5px;  
   @if $size == default{ //underline etc
     text-align: left;
-    border-bottom: 3px solid $brand-secondary;    
+    border-bottom: 3px solid $brand-primary;    
     padding: 0 1.25rem 0.4rem 0;
     display: inline-block;
     margin-bottom: 1.25rem;
@@ -92,7 +92,7 @@
 
 //ATTRIBUTE MIXINS
 @mixin gradient-vertical($start-color, $end-color) {
-  background: $brand-secondary; // old browsers
+  background: $brand-primary; // old browsers
   background: -webkit-linear-gradient(top, $start-color, $end-color);  // Safari 5.1-6, Chrome 10+
   background: -o-linear-gradient(top, $start-color, $end-color);  // Opera 12
   background: linear-gradient(to bottom, $start-color, $end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
@@ -154,7 +154,7 @@
   }
 }
 
-@mixin mod-header($color: $brand-secondary){
+@mixin mod-header($color: $brand-primary){
   #page-header{
     background-color: $blocks-gray;
     .breadcrumb{
@@ -178,7 +178,7 @@
     &:not(:empty){
       border: $border-width solid darken($blocks-blue, 10%);
       background-color: $blocks-blue;
-      color: $brand-secondary;
+      color: $brand-primary;
       padding: 1.25rem;
       // margin-top: 1.25rem;
       @include border-bottom-radius($border-radius);

@@ -14,7 +14,7 @@
       .form-setting{
         .form-description{
           background: $blocks-blue;
-          color: lighten($gray-dark, 30%);
+          //color: lighten($gray-dark, 30%);
           padding: 1rem;
           @include border-radius($border-radius);
           p{

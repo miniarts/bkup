@@ -102,7 +102,7 @@ $login-text-color:#fff;
 				position: inherit;
 				margin-top:0;
 				.nav-link{
-					@include bloom-label($font-size-sm, 500, $bloom-header-text-color);
+					@include bloom-label($font-size-sm, 500, $header-text-color);
 					padding: 1.25rem;
 					margin: 0.5rem 0;
 					&:hover{

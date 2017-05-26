@@ -1,11 +1,11 @@
 $event-type-course: $bloom-courses-color;
-$event-type-group: $brand-primary;
+$event-type-group: $brand-secondary;
 $event-type-user: $bloom-user-color;
-$event-type-global: $brand-secondary;
+$event-type-global: $brand-primary;
 
 .block_calendar_agenda{
-	a{
-		color: $brand-secondary;
+	.post a{
+		color: $brand-primary;
 	}
 	.content{
 		.event{
@@ -74,13 +74,13 @@ $event-type-global: $brand-secondary;
 	}
 	.calendar_agenda_gotocal{		
 		> a{
-			@extend .btn-secondary;
+			//@extend .btn-secondary;
 			@include border-right-radius(0);
 		}
 	}
 	.calendar_agenda_newevent{
 		> a{
-			@extend .btn-outline-secondary;
+			//@extend .btn-outline-secondary;
 			@include border-left-radius(0);
 			&:before{
 				font-family: fontAwesome;

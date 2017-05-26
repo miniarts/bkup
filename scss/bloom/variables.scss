@@ -54,34 +54,29 @@ $bloom-user-color:          rgba(233, 11, 129, 1) !default;
 // use for courses tab, info panel
 $bloom-courses-color:       rgba(31, 152, 136, 1) !default;
 // use for footer and text
-$gray-dark:                 rgba(84, 81, 87, 1) !default;
+$footer-color:                 rgba(84, 81, 87, 1) !default;
 // light blue, use for table rows, blocks and input fields
 $blocks-blue:               rgba(241, 249, 254, 1) !default;
 // translucent dark blue, use for overlaying images
 //$overlay:                   rgba(29, 48, 82, 0.5) !default;
 
 // button colors
-$btn-text-color:              rgba(255, 255, 255, 1) !default;
-$bloom-header-text-color:     rgba(255, 255, 255, 1) !default;
+$btn-text-color:            rgba(255, 255, 255, 1) !default;
+$header-text-color:         rgba(255, 255, 255, 1) !default;
 
-
+$gray-dark:                 #373a3c  !default;
 $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
-$gray-lighter:              #eceeef !default;
-$gray-lightest:             #f7f7f9 !default;
-
-
-// $brand-success:             $bloom-user-color !default;  //this makes no sense
-// $brand-info:                $bloom-courses-color !default;
-// $brand-warning:             $bloom-accent-color !default;
-// $brand-danger:              #ff6961 !default;
-// $brand-inverse:             $gray-dark !default;
+$gray-lighter:              $blocks-gray !default; // #eceeef !default;
+$gray-lightest:             lighten($blocks-gray, 10%) !default; //#f7f7f9 !default;
 
 $brand-success:             #5cb85c !default;
 $brand-info:                #5bc0de !default;
 $brand-warning:             #f0ad4e !default;
 $brand-danger:              #ff6961 !default;
 $brand-inverse:             $gray-dark !default;
+
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
@@ -150,7 +145,7 @@ $link-hover-decoration: underline !default;
 $grid-breakpoints: (
   xs: 0,
   sm: 544px,
-  md: 768px,
+  md: 768px,  
   lg: 992px,
   xl: 1200px
 ) !default;
@@ -288,12 +283,12 @@ $btn-box-shadow:                 inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px 
 $btn-active-box-shadow:          inset 0 3px 5px rgba(0,0,0,.125) !default;
 
 $btn-primary-color:              $btn-text-color !default;
-$btn-primary-bg:                 $bloom-accent-color !default;
+$btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             $btn-primary-bg !default;
 
-$btn-secondary-color:            $btn-text-color !default;
-$btn-secondary-bg:               $brand-secondary !default;
-$btn-secondary-border:           $btn-secondary-bg !default;
+$btn-secondary-color:            $brand-primary !default;
+$btn-secondary-bg:               #fff !default;
+$btn-secondary-border:           $brand-primary !default;
 
 $btn-info-color:                 $btn-text-color !default;
 $btn-info-bg:                    $brand-info !default;
@@ -465,8 +460,8 @@ $dropdown-border-width:          $border-width !default;
 $dropdown-divider-bg:            #e5e5e5 !default;
 $dropdown-box-shadow:            0 6px 12px rgba(0,0,0,.175) !default;
 
-$dropdown-link-color:            $brand-secondary !default;
-$dropdown-link-hover-color:      darken($brand-secondary, 8%) !default;
+$dropdown-link-color:            $brand-primary !default;
+$dropdown-link-hover-color:      darken($brand-primary, 8%) !default;
 $dropdown-link-hover-bg:         darken($blocks-blue, 5%) !default;
 
 $dropdown-link-active-color:     $component-active-color !default;
@@ -496,20 +491,19 @@ $zindex-modal:             1050 !default;
 
 
 // Navbar
-//not used
 $navbar-border-radius:              $border-radius !default;
 $navbar-padding-x:                  $spacer !default;
 $navbar-padding-y:                  ($spacer / 2) !default;
 $navbar-brand-padding-y:            .25rem !default;
 
-$navbar-dark-color:                 $bloom-header-text-color !default;
-$navbar-dark-hover-color:           $bloom-header-text-color !default;
-$navbar-dark-active-color:          $bloom-header-text-color !default;
-$navbar-dark-disabled-color:        darken($bloom-header-text-color, 10%) !default;
+$navbar-dark-color:                 #fff !default;
+$navbar-dark-hover-color:           darken($navbar-dark-color, 5%)  !default;
+$navbar-dark-active-color:          darken($navbar-dark-color, 10%)  !default;
+$navbar-dark-disabled-color:        darken($header-text-color, 10%) !default;
 
-$navbar-light-color:                rgba(0,0,0,.3) !default;
-$navbar-light-hover-color:          rgba(0,0,0,.6) !default;
-$navbar-light-active-color:         rgba(0,0,0,.8) !default;
+$navbar-light-color:                $brand-primary !default; //rgba(0,0,0,.3) !default;
+$navbar-light-hover-color:          lighten($brand-primary, 5%) !default; //rgba(0,0,0,.6) !default;
+$navbar-light-active-color:         lighten($brand-primary, 10%) !default; //rgba(0,0,0,.8) !default;
 $navbar-light-disabled-color:       rgba(0,0,0,.15) !default;
 
 
@@ -851,4 +845,5 @@ $pre-scrollable-max-height:   340px !default;
 //login page background image
 $login-background:       url([[pix:theme|background]]);
 
-$footer-link-color:      #fff;
+$footer-link-color:      #fff !important; //override moodle core
+$navbar-height: 60px; //it was in moolde/bootswatch
